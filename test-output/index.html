@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">3 suites</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-API" class="navigator-link">
+              <span class="suite-name border-passed">API</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-API" class="navigator-link ">
+                    <span>C:\HRS\HRS_POC\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-API" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-API" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-API" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-API" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-API" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-API" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">3 methods,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-API" class="hide-methods passed suite-API"> (hide)</a> <!-- hide-methods passed suite-API -->
+                      <a href="#" panel-name="suite-API" class="show-methods passed suite-API"> (show)</a> <!-- show-methods passed suite-API -->
+                    </span>
+                    <div class="method-list-content passed suite-API">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API" title="com.hrsAPI.test.HrsApiTest" class="method navigator-link" hash-for-method="verifyEndpointTestingConfirmAllMedGatewayEndpointsareExposed(T2896359, 200, Rudra, Maharudra@123456)">verifyEndpointTestingConfirmAllMedGatewayEndpointsareExposed(T2896359, 200, Rudra, Maharudra@123456)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API" title="com.hrsAPI.test.HrsApiTest" class="method navigator-link" hash-for-method="verifyMedicationMasterListPulledFromGatewayEndpoint(T2896358, 200, Rudra, Maharudra@123456, 2088)">verifyMedicationMasterListPulledFromGatewayEndpoint(T2896358, 200, Rudra, Maharudra@123456, 2088)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-API" title="com.hrsAPI.test.HrsApiTest" class="method navigator-link" hash-for-method="verifyNewMedicationFromEMRModalNotificationsReconciled(T2896362, 200, Rudra, Maharudra@123456, Rudra Android10, 1683186259, 168, 88fYk46MqpLEOvF7S8kU, 4, o...)">verifyNewMedicationFromEMRModalNotificationsReconciled(T2896362, 200, Rudra, Maharudra@123456, Rudra Android10, 1683186259, 168, 88fYk46MqpLEOvF7S8kU, 4, o...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-API -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Android" class="navigator-link">
+              <span class="suite-name border-passed">Android</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Android" class="navigator-link ">
+                    <span>C:\HRS\HRS_POC\hrs.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Android" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Android" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Android" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Android" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Android" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Android" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">5 methods,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Android" class="hide-methods passed suite-Android"> (hide)</a> <!-- hide-methods passed suite-Android -->
+                      <a href="#" panel-name="suite-Android" class="show-methods passed suite-Android"> (show)</a> <!-- show-methods passed suite-Android -->
+                    </span>
+                    <div class="method-list-content passed suite-Android">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Android" title="com.hrs.test.ClinicianConnect" class="method navigator-link" hash-for-method="verifyAddMedicationFrequencyOnceDaily">verifyAddMedicationFrequencyOnceDaily</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Android" title="com.hrs.test.ClinicianConnect" class="method navigator-link" hash-for-method="verifyAddReminderModalGeneralDisplay">verifyAddReminderModalGeneralDisplay</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Android" title="com.hrs.test.ClinicianConnect" class="method navigator-link" hash-for-method="verifyMetricsTabGeneralDisplay">verifyMetricsTabGeneralDisplay</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Android" title="com.hrs.test.ClinicianConnect" class="method navigator-link" hash-for-method="verifyPatientConnectMobileLoginCodesLoggingIntoPCM">verifyPatientConnectMobileLoginCodesLoggingIntoPCM</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Android" title="com.hrs.test.ClinicianConnect" class="method navigator-link" hash-for-method="verifyPatientListGeneralDetailsDisplay">verifyPatientListGeneralDetailsDisplay</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Android -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-AndroidMasterSuite" class="panel AndroidMasterSuite">
+        </div> <!-- panel AndroidMasterSuite -->
+        <div panel-name="suite-API" class="panel API">
+          <div class="suite-API-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.hrsAPI.test.HrsApiTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEndpointTestingConfirmAllMedGatewayEndpointsareExposed(T2896359, 200, Rudra, Maharudra@123456)">
+                  </a> <!-- verifyEndpointTestingConfirmAllMedGatewayEndpointsareExposed(T2896359, 200, Rudra, Maharudra@123456) -->
+                  <span class="method-name">verifyEndpointTestingConfirmAllMedGatewayEndpointsareExposed</span>
+                  <span class="parameters">(T2896359, 200, Rudra, Maharudra@123456)</span>
+                  <em>
+(T2896359)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyMedicationMasterListPulledFromGatewayEndpoint(T2896358, 200, Rudra, Maharudra@123456, 2088)">
+                  </a> <!-- verifyMedicationMasterListPulledFromGatewayEndpoint(T2896358, 200, Rudra, Maharudra@123456, 2088) -->
+                  <span class="method-name">verifyMedicationMasterListPulledFromGatewayEndpoint</span>
+                  <span class="parameters">(T2896358, 200, Rudra, Maharudra@123456, 2088)</span>
+                  <em>
+(T2896358-API)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyNewMedicationFromEMRModalNotificationsReconciled(T2896362, 200, Rudra, Maharudra@123456, Rudra Android10, 1683186259, 168, 88fYk46MqpLEOvF7S8kU, 4, o...)">
+                  </a> <!-- verifyNewMedicationFromEMRModalNotificationsReconciled(T2896362, 200, Rudra, Maharudra@123456, Rudra Android10, 1683186259, 168, 88fYk46MqpLEOvF7S8kU, 4, o...) -->
+                  <span class="method-name">verifyNewMedicationFromEMRModalNotificationsReconciled</span>
+                  <span class="parameters">(T2896362, 200, Rudra, Maharudra@123456, Rudra Android10, 1683186259, 168, 88fYk46MqpLEOvF7S8kU, 4, ok)</span>
+                  <em>
+(HRS_API-T2896362)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API-class-passed -->
+        </div> <!-- panel API -->
+        <div panel-name="suite-Android" class="panel Android">
+          <div class="suite-Android-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.hrs.test.ClinicianConnect</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAddMedicationFrequencyOnceDaily">
+                  </a> <!-- verifyAddMedicationFrequencyOnceDaily -->
+                  <span class="method-name">verifyAddMedicationFrequencyOnceDaily</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAddReminderModalGeneralDisplay">
+                  </a> <!-- verifyAddReminderModalGeneralDisplay -->
+                  <span class="method-name">verifyAddReminderModalGeneralDisplay</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyMetricsTabGeneralDisplay">
+                  </a> <!-- verifyMetricsTabGeneralDisplay -->
+                  <span class="method-name">verifyMetricsTabGeneralDisplay</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyPatientConnectMobileLoginCodesLoggingIntoPCM">
+                  </a> <!-- verifyPatientConnectMobileLoginCodesLoggingIntoPCM -->
+                  <span class="method-name">verifyPatientConnectMobileLoginCodesLoggingIntoPCM</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyPatientListGeneralDetailsDisplay">
+                  </a> <!-- verifyPatientListGeneralDetailsDisplay -->
+                  <span class="method-name">verifyPatientListGeneralDetailsDisplay</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Android-class-passed -->
+        </div> <!-- panel Android -->
+        <div panel-name="test-xml-AndroidMasterSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\HRS\HRS_POC\hrsDemo.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite time-out=&quot;7200000&quot; name=&quot;AndroidMasterSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;suite-files&gt;
+    &lt;suite-file path=&quot;./hrs.xml&quot;/&gt;
+    &lt;suite-file path=&quot;./testng.xml&quot;/&gt;
+  &lt;/suite-files&gt;
+&lt;/suite&gt; &lt;!-- AndroidMasterSuite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="test-xml-API" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\HRS\HRS_POC\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; name=&quot;API&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;Env&quot; value=&quot;sit&quot;/&gt;
+  &lt;parameter name=&quot;url&quot; value=&quot;https://www.google.com/&quot;/&gt;
+  &lt;parameter name=&quot;browserType&quot; value=&quot;chrome&quot;/&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.hrsAPI.test.HrsApiTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
+&lt;/suite&gt; &lt;!-- API --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="test-xml-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\HRS\HRS_POC\hrs.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; name=&quot;Android&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;url&quot; value=&quot;https://www.google.com/&quot;/&gt;
+  &lt;parameter name=&quot;browserType&quot; value=&quot;chrome&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.utility.ExtentReporter&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;HRS&quot;&gt;
+    &lt;parameter name=&quot;portno&quot; value=&quot;4723&quot;/&gt;
+    &lt;parameter name=&quot;deviceName&quot; value=&quot;RZ8W3003SQL&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.hrs.test.ClinicianConnect&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- HRS --&gt;
+&lt;/suite&gt; &lt;!-- Android --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-AndroidMasterSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for AndroidMasterSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-API" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for API</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Android</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">HRS (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-AndroidMasterSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for AndroidMasterSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-API" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for API</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Android</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-AndroidMasterSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for AndroidMasterSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_AndroidMasterSuite');
+function tableData_AndroidMasterSuite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(0);
+window.suiteTableData['AndroidMasterSuite']= { tableData: data, tableDiv: 'times-div-AndroidMasterSuite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 0 ms</span>
+              <div id="times-div-AndroidMasterSuite">
+              </div> <!-- times-div-AndroidMasterSuite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-API" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for API</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_API');
+function tableData_API() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(3);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'verifyMedicationMasterListPulledFromGatewayEndpoint')
+data.setCell(0, 2, 'com.hrsAPI.test.HrsApiTest')
+data.setCell(0, 3, 7920);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyEndpointTestingConfirmAllMedGatewayEndpointsareExposed')
+data.setCell(1, 2, 'com.hrsAPI.test.HrsApiTest')
+data.setCell(1, 3, 4776);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifyNewMedicationFromEMRModalNotificationsReconciled')
+data.setCell(2, 2, 'com.hrsAPI.test.HrsApiTest')
+data.setCell(2, 3, 4350);
+window.suiteTableData['API']= { tableData: data, tableDiv: 'times-div-API'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 17 seconds</span>
+              <div id="times-div-API">
+              </div> <!-- times-div-API -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Android</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Android');
+function tableData_Android() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(5);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'verifyMetricsTabGeneralDisplay')
+data.setCell(0, 2, 'com.hrs.test.ClinicianConnect')
+data.setCell(0, 3, 176988);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyPatientListGeneralDetailsDisplay')
+data.setCell(1, 2, 'com.hrs.test.ClinicianConnect')
+data.setCell(1, 3, 74318);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifyPatientConnectMobileLoginCodesLoggingIntoPCM')
+data.setCell(2, 2, 'com.hrs.test.ClinicianConnect')
+data.setCell(2, 3, 39893);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyAddReminderModalGeneralDisplay')
+data.setCell(3, 2, 'com.hrs.test.ClinicianConnect')
+data.setCell(3, 3, 22840);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'verifyAddMedicationFrequencyOnceDaily')
+data.setCell(4, 2, 'com.hrs.test.ClinicianConnect')
+data.setCell(4, 3, 20595);
+window.suiteTableData['Android']= { tableData: data, tableDiv: 'times-div-Android'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <div id="times-div-Android">
+              </div> <!-- times-div-Android -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-AndroidMasterSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for AndroidMasterSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-API" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for API</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Android</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-AndroidMasterSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-API" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-AndroidMasterSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-API" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.hrsAPI.test.HrsApiTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">logging</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">6402 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">verifyEndpointTestingConfirmAllMedGatewayEndpointsareExposed(T2896359, 200, Rudra, Maharudra@123456)</span>
+                <span class="method-start">6866 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyEndpointTestingConfirmAllMedGatewayEndpointsareExposed status=SUCCESS method=...)</span>
+                <span class="method-start">11643 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">verifyMedicationMasterListPulledFromGatewayEndpoint(T2896358, 200, Rudra, Maharudra@123456, 2088)</span>
+                <span class="method-start">11712 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyMedicationMasterListPulledFromGatewayEndpoint status=SUCCESS method=HrsApiTes...)</span>
+                <span class="method-start">19633 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">verifyNewMedicationFromEMRModalNotificationsReconciled(T2896362, 200, Rudra, Maharudra@123456, Rudra Android10, 1683186259, 168, 88fYk46MqpLEOvF7S8kU, 4, o...)</span>
+                <span class="method-start">19678 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=verifyNewMedicationFromEMRModalNotificationsReconciled status=SUCCESS method=HrsApi...)</span>
+                <span class="method-start">24029 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">24029 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Android" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.hrs.test.ClinicianConnect</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeMethod(RZ8W3003SQL, 4723)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">24193 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyPatientListGeneralDetailsDisplay</span>
+                <span class="method-start">24195 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">98713 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyMetricsTabGeneralDisplay</span>
+                <span class="method-start">98714 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">275911 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyAddReminderModalGeneralDisplay</span>
+                <span class="method-start">275911 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">299021 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyAddMedicationFrequencyOnceDaily</span>
+                <span class="method-start">299021 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">319790 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyPatientConnectMobileLoginCodesLoggingIntoPCM</span>
+                <span class="method-start">319790 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">361383 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
