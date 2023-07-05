@@ -14,7 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.driverInstance.DriverManager;
-import com.hrs.Androidpages.HomePage;
+import com.hrs.Androidpages.HomePages;
 import com.hrs.Androidpages.LoginPage;
 import com.hrs.web.ClinicianConnectPage;
 import com.utility.ExtentReporter;
@@ -131,7 +131,7 @@ public static String UN;
 		waitTime(200);
 		DriverManager.getAppiumDriver().findElement(LoginPage.objSumitCosentFormButton).click();
 		Thread.sleep(1000);
-		findElementAndVerifyText(HomePage.objHomeButtonText, "Home");
+		findElementAndVerifyText(HomePages.objHomeButtonText, "Home");
 		waitTime(200);
 		findElementAndVerifyText(LoginPage.objHelpCosentFormButton, "Help"); 
 
@@ -439,51 +439,315 @@ public static String UN;
 	
 	
 	
+	/////////////////////////////////////////////////////////////////////
 	
 	
-	public static void addMedication() throws Exception
+	public static String HRS;
+	/*
+	 * @param command
+	 * @throws Exception
+	 * @method location Permission
+	 */
+	public static void locationPermission() throws Exception {
+		if (oSPlatformName.equalsIgnoreCase("Android") || oSPlatformName.equalsIgnoreCase("BrowserStack")) {
+			try {
+				verifyElementPresent(LoginPage.objLocationPermissionTxt, "Location Permission Popup");
+				verifyElementPresentAndClick(LoginPage.objCloseButton, "click on close Button");
+			} catch(AssertionError e){
+				ExtentReporter.extentLoggerFail("Location Permission", "Location Permission Not Display");
+				throw e;
+			}
+		} else if (oSPlatformName.equalsIgnoreCase("iOS") || oSPlatformName.equalsIgnoreCase("IOSBrowserStack")) {
+
+		}
+	}
+
+	/*
+	 * @param command
+	 * @throws Exception
+	 * @method devicelocation Permission
+	 */
+	public static void devicelocationPermission(String deviceLocation) throws Exception {
+		if (oSPlatformName.equalsIgnoreCase("Android") || oSPlatformName.equalsIgnoreCase("BrowserStack")) {
+			try {
+				if (deviceLocation.equalsIgnoreCase("Allow")) {
+					verifyElementPresent(LoginPage.objAllowKRAMER, " Device Location Permission Popup");
+					verifyElementPresentAndClick(LoginPage.objWhileUsingApp,"Allow only while using the app button");
+				} else {
+					verifyElementPresentAndClick(LoginPage.objDontAllow, "Deny Button");
+				}
+			} catch(AssertionError e){
+				ExtentReporter.extentLoggerFail(" Device Location Permission", "Device Location Permission Not Display");
+				throw e;
+			}
+		} else if (oSPlatformName.equalsIgnoreCase("iOS") || oSPlatformName.equalsIgnoreCase("IOSBrowserStack")) {
+
+		}
+	}
+
+	/*
+	 * @param command
+	 * @throws Exception
+	 * @method for Login to Application
+	 */
+
+	public static void logintoHRSportal(String HRS_URL,String UserName,String Password,String patient_name) throws Exception {		
+		switchPlatformToWeb(HRS_URL);	
+		windowID = getWebDriver().getWindowHandle();
+		explicitWaitVisibility(LoginPage.objUsernameWeb, 20);	
+		typeWeb(LoginPage.objUsernameWeb, UserName, "UserName Field");
+		explicitWaitVisibility(LoginPage.objPasswordWeb, 20);		
+		typeWeb(LoginPage.objPasswordWeb, Password, "Password Field");
+		waitForElementAndClickIfPresent(LoginPage.objSignInButtonWeb, 10, "Submit Button");
+		waitTime(6000);
+		waitForElementAndClickIfPresent(LoginPage.objFirstName, 10, null);		
+		clearWebField(LoginPage.objFirstName, "FirstName textfield");		
+		waitTime(5000);		
+		typeWeb(LoginPage.objFirstName, "", "First Name");		
+		typeWeb(LoginPage.objFirstName, patient_name, "First Name");
+		waitForElementAndClickIfPresent(LoginPage.objFullpatientList,60,"Full patient List");
+		ScrollToTheElement(LoginPage.objGenerateCode);
+		waitForElementAndClickIfPresent(LoginPage.objGenerateCode,30, "Generate Code Button");
+		UN=findElement(LoginPage.objUsername_Gcode).getText().replace("Username:", "").replaceAll(" ", "");		
+		System.out.println(UN);
+		PWD=findElement(LoginPage.objPassword_Gcode).getText().replace("Password:", "").replaceAll(" ", "");		
+		System.out.println(PWD);		
+		waitTime(5000);		
+		JSClick(LoginPage.objCloseButtonWeb ,"close Button");
+		scrollToTopOfPageWEB();
+
+	}
+
+	/*
+	 * @param command
+	 * @throws Exception
+	 * @method for Login to Application Not Generate Code
+	 */
+
+	public static void logintoHRSportalNotGCode(String HRS_URL,String UserName,String Password,String patient_name) throws Exception {		
+		//	switchPlatformToWeb(HRS_URL);
+		explicitWaitVisibility(LoginPage.objUsernameWeb, 20);	
+		typeWeb(LoginPage.objUsernameWeb, UserName, "UserName Field");
+		explicitWaitVisibility(LoginPage.objPasswordWeb, 20);		
+		typeWeb(LoginPage.objPasswordWeb, Password, "Password Field");
+		waitForElementAndClickIfPresent(LoginPage.objSignInButtonWeb, 10, "Submit Button");
+		waitTime(6000);
+		waitForElementAndClickIfPresent(LoginPage.objFirstName, 10, null);		
+		clearWebField(LoginPage.objFirstName, "FirstName textfield");		
+		waitTime(5000);		
+		typeWeb(LoginPage.objFirstName, "", "First Name");
+		waitTime(5000);
+		typeWeb(LoginPage.objFirstName, patient_name, "First Name");
+		//	waitForElementAndClickIfPresent(LoginPage.objFullpatientList,60,"Full patient List");
+	}
+
+	/*
+	 * @throws Exception
+	 * @method click on signButton button
+	 */
+	public static void signIntoHRSPCM() throws Exception 
 	{
+		switchPlatformToAndroid();
+		reopenHRS();		
+		if(verifyElementAvailable(LoginPage.objConsentForm,"Consent form")) 
+		{
+			verifyElementPresentAndClick(LoginPage.objNextButton, "Next Button");			
+			verifyElementPresent(LoginPage.obj2of3Page,"Consent form 2 page");			
+			verifyElementPresentAndClick(LoginPage.objNextButton, "Next Button");			
+			verifyElementPresent(LoginPage.objSignature,"Signature page");			
+			Swipe("LEFT", 1);		
+			verifyElementPresentAndClick(LoginPage.objSubmitButton, "Submit Button");		
+		}else {			
+			verifyElementPresentAndClick(LoginPage.objSignIn, "Sign In button");	
+			type(LoginPage.objUsernameField, UN, "UserName Field");	
+			waitTime(1000);
+			type(LoginPage.objPasswordField, PWD, "Password Field");	
+			Thread.sleep(4000);
+			click(LoginPage.objSubmitButton, "Submit Button");
+			Thread.sleep(4000);
+		}
+	}
+
+	/*
+	 * @throws Exception
+	 * @method use to Login the application
+	 */
+
+	public static void verifyLoginPage() throws Exception
+	{
+		if (verifyElementAvailable(LoginPage.objLocationPermissionTxt, "Location Permission Needed")) {
+			locationPermission();
+			devicelocationPermission("Allow");
+		}
+		logintoHRSportal(prop.getproperty("HRS_URL"),prop.getproperty("HRS_USERNAME"),prop.getproperty("HRS_PWD"),prop.getproperty("FirstName"));
+		
+		signIntoHRSPCM();
+		Thread.sleep(4000);
+	}
+
+	/*
+	 * @throws Exception
+	 * @method for verify the Home page
+	 */
+	//Login should be once//
+	public static void verificationOfHomePageModules() throws Exception 
+	{ 	
+		verifyElementPresent(LoginPage.objMainmenuButton,"Hamburger menu Button");
+		verifyElementPresent(LoginPage.objHRSLogo,"Client Logo");
+		verifyElementPresent(LoginPage.objHomeButtonText, "Home Button");
+		findElementAndVerifyText(LoginPage.objActivity, "Activity");
+		findElementAndVerifyText(LoginPage.objBloodPressure, "Blood Pressure");
+		findElementAndVerifyText(LoginPage.objGlucose, "Glucose");
+		findElementAndVerifyText(LoginPage.objMedication, "Medication");
+		findElementAndVerifyText(LoginPage.objOxygenLevel, "Oxygen Level");
+		findElementAndVerifyText(LoginPage.objSurvey, "Survey");
+		scrollToVertical("Imaging");
 		waitTime(1000);
-	//	getWebDriver().get("https://cc.jerry.hrsqa.com/");
-		switchPlatformToWebToAPI("https://cc.jerry.hrsqa.com/");
-	//	waitTime(1000);
-	//	getWebDriver().findElement(LoginPage.objUserNameWebTextBox).sendKeys("Rudra");
-//		typeWeb_API(LoginPage.objUserNameWebTextBox, "Rudra", "UserName");
-//		typeWeb_API(LoginPage.objPasswordWebTextBox, "Maharudra@123456", "Password");
-//		waitForElementAndClickIfPresent_API(LoginPage.objLoginWebButton, "Login ");
-//		waitTime(1000);
-//		Thread.sleep(3000);
-//		waitForElementAndClickIfPresent_API(ClinicianConnectPage.objPatientFullProfile, "Patient Profile");
-//		waitTime(1000);
-//		waitForElementAndClickIfPresent_API(ClinicianConnectPage.objCarePlanButton,  "Care Plan ");
-//		waitTime(1000);
-//		ScrollToTheElement(ClinicianConnectPage.objAddReminderBtn);
-//		waitTime(1000);
-//		waitForElementAndClickIfPresent_API(ClinicianConnectPage.objPluseBtn, "Pluse Button");
-//		waitTime(1000);
-//		WebElement ele = findElement(ClinicianConnectPage.objMedicationNameChooseBtn);
-//		Actions ac = new Actions(getWebDriver());
-//		ac.moveToElement(ele).click().build().perform();
-//		List<WebElement> medicationListValues = findElements(ClinicianConnectPage.objMedicationValuesList);
-//		for(WebElement medicationValues : medicationListValues )
-//		{
-//			if((medicationValues.getText()).equalsIgnoreCase("LIQUAEMIN SODIUM"))
-//			{
-//				medicationValues.click();
-//				break;
-//			}
-//		}
-//		waitTime(1000);
-//		typeWeb_API(ClinicianConnectPage.objStrengthTextBox, "100" , "Strength Value MG");
-//		Thread.sleep(1000);
-//		waitForElementAndClickIfPresent_API(ClinicianConnectPage.objIsEssentialCheckBox, "Is Essential Check Box ");
-//		typeWeb_API(ClinicianConnectPage.objExpirationDate, "08/07/2024" , "Expiration");
-//		Thread.sleep(1000);
-//		typeWeb_API(ClinicianConnectPage.objSpecialInstructionTextBox, "Every Day " , "Special Instructions");
-//		waitForElementAndClickIfPresent_API(ClinicianConnectPage.objMedicationSubmitBtn, "Submit");
-//		
-//		
-//		waitTime(1000);
+		findElementAndVerifyText(LoginPage.objTemperature, "Temperature");
+		findElementAndVerifyText(LoginPage.objWeight, "Weight");
+		findElementAndVerifyText(LoginPage.objImaging, "Imaging");
+		verifyElementPresent(LoginPage.objEducationButton, "Education Button");
+		verifyElementPresent(LoginPage.objHelpButton, "Help Button");
+
+	}
+
+	/*
+	 * @throws Exception
+	 * @method for Validate that patient is able to submit entry after entering valid values into all fields and that green check mark appears on home screen after submission. 
+	 */
+	public static void recordBloodPressure(String value1,String value2,String value3) throws Exception
+	{ 
+		Swipe("DOWN", 1);
+		waitTime(3000);
+		verifyElementPresentAndClick(LoginPage.objBloodPressure, "Blood Pressure");
+		explicitWaitVisible(LoginPage.objSystolic, 20);
+		verifyElementPresentAndClick(LoginPage.objSystolic, "Systolic:(mm Hg)");
+		type(LoginPage.objSystolic, value1, "Systolic value Entered");
+		explicitWaitVisible(LoginPage.objDiastolic, 20);
+		verifyElementPresentAndClick(LoginPage.objDiastolic, "Diastolic:(mm Hg)");
+		type(LoginPage.objDiastolic, value2, "Diastolic value Entered");
+		explicitWaitVisible(LoginPage.objHeartRate, 20);
+		verifyElementPresentAndClick(LoginPage.objHeartRate, "Heart rate:(bpm)");
+		type(LoginPage.objHeartRate, value3, "Heart rate value Entered");
+		explicitWaitVisible(LoginPage.objSaveButton, 20);
+		verifyElementPresentAndClick(LoginPage.objSaveButton,"Save button");
+		String enabled_after = getAttributValue("enabled", LoginPage.objBloodPressure);
+		logger.info(getText(LoginPage.objBloodPressure) + " is highlighted:" + enabled_after);
+		ExtentReporter.extentLogger("Attribute", getText(LoginPage.objBloodPressure) + " is highlighted:" + enabled_after);
+		//tearDown();
+		waitTime(5000);         
+		switchPlatformToWeb(prop.getproperty("HRS_URL"));	
+	//	getPlatform();
+	//	switchPlatformToWebParentWindow(windowID);
+		logintoHRSportalNotGCode(prop.getproperty("HRS_URL"),prop.getproperty("HRS_USERNAME"),prop.getproperty("HRS_PWD"),prop.getproperty("FirstName"));
+		waitTime(6000);	
+		verifyElementPresent(LoginPage.objPatientTableview, "Patient Table view");
+		verifyElementPresent(LoginPage.objPatientBPblock, "Patient BPblock");
+		verifyElementPresent(LoginPage.objPatientBPblock,"BPblock");
+		String BP1=getText(LoginPage.objPatientBPblock);
+		System.out.println(BP1);
+		waitForElementAndClickIfPresent(LoginPage.objFullpatientList,60,"Full patient List");
+		verifyElementPresent(LoginPage.objOverviewBPblockWeb, "Overview BP block");
+		verifyElementPresent(LoginPage.objOverviewBPblockWeb,"BPblock");
+		String BP2=getText(LoginPage.objOverviewBPblockWeb);
+		System.out.println(BP2);
+		waitForElementAndClickIfPresent(LoginPage.objHistoricaldata,60,"Historialdata");
+		verifyElementPresent(LoginPage.objHistoricalBPblock,"BPblock");
+		String BP3=getText(LoginPage.objHistoricalBPblock);
+		System.out.println(BP3);
+		//getWebDriver().close();
+
+	}	
+
+	/*
+	 * @throws Exception
+	 * @method for Verifying general display of 'Video Call'.
+	 */
+	public static void verifyvideoCallOption() throws Exception
+	{ 
+		switchPlatformToAndroid();
+		explicitWaitVisible(LoginPage.objMainmenuButton,20);
+		verifyElementPresentAndClick(LoginPage.objMainmenuButton,"Hamburger menu Button");
+		explicitWaitVisible(LoginPage.objContactCliniciaText,20);
+		verifyElementPresentAndClick(LoginPage.objContactCliniciaText,"Contact Clinician");
+		explicitWaitVisible(LoginPage.objVideoCall,20);
+		verifyElementPresentAndClick(LoginPage.objVideoCall,"Video Call");
+	//	explicitWaitVisible(LoginPage.objVideoCall,20);
+		verifyElementPresent(LoginPage.objVideoCall,"Video call");
+	//	explicitWaitVisible(LoginPage.objCancelButton,20);
+		verifyElementPresent(LoginPage.objClosepcmtButton,"Cancel Button");
+	//	explicitWaitVisible(LoginPage.objClinician,20);
+		verifyElementPresent(LoginPage.objClinician,"Clinician Text");
+	//	explicitWaitVisible(LoginPage.objVideoIcon,20);
+		verifyElementPresent(LoginPage.objVideoIcon,"Video Icon");
+		explicitWaitVisible(LoginPage.objCallButton,20);
+		verifyElementPresent(LoginPage.objCallButton,"Call Button");
+		verifyElementPresent(LoginPage.objCancelpcmtButton,"Cancel Button");
+		verifyElementPresentAndClick(LoginPage.objClosepcmtButton,"Close Button");
+		findElementAndVerifyText(LoginPage.objActivity, "Activity");
+		findElementAndVerifyText(LoginPage.objBloodPressure, "Blood Pressure"); 		
+		//	getWebDriver().close();		 
+	}
+
+	/*
+	 * @throws Exception
+	 * @method for Verifying general display of 'Voice Call'.
+	 */
+	public static void verifyVoiceCallOption() throws Exception
+	{ 
+		explicitWaitVisible(LoginPage.objMainmenuButton,20);
+		verifyElementPresentAndClick(LoginPage.objMainmenuButton,"Hamburger menu Button");
+		explicitWaitVisible(LoginPage.objContactCliniciaText,20);
+		verifyElementPresentAndClick(LoginPage.objContactCliniciaText,"Contact Clinician");
+		explicitWaitVisible(LoginPage.objVoiceCall,20);
+		verifyElementPresentAndClick(LoginPage.objVoiceCall,"Voice call");
+		findElementAndVerifyText(LoginPage.objVoiceCall,"Voice call");
+		verifyElementPresent(LoginPage.objClosepcmtButton,"Cancel Button");
+		verifyElementPresent(LoginPage.objClinician,"Clinician Text");
+		verifyElementPresent(LoginPage.objVoiceCallIcon,"Voice Icon");
+		explicitWaitVisible(LoginPage.objCallButton,20);
+		verifyElementPresent(LoginPage.objCallButton,"Call Button");
+		verifyElementPresent(LoginPage.objCancelpcmtButton,"Cancel Button");
+		verifyElementPresentAndClick(LoginPage.objClosepcmtButton,"Close Button");
+		findElementAndVerifyText(LoginPage.objActivity, "Activity");
+		findElementAndVerifyText(LoginPage.objBloodPressure, "Blood Pressure");	
+	}
+
+	/*
+	 * @throws Exception
+	 * @method for Validate the UI elements displayed inside the PCM 'Message' modal. 
+	 */
+	public static void verifySendMessageOption(String SMSMob,String SMSWeb) throws Exception
+	{ 
+		//Mob
+		explicitWaitVisible(LoginPage.objMainmenuButton,20);
+		verifyElementPresentAndClick(LoginPage.objMainmenuButton,"Hamburger menu Button");
+		explicitWaitVisible(LoginPage.objContactCliniciaText,20);
+		verifyElementPresentAndClick(LoginPage.objContactCliniciaText,"Contact Clinician");
+		explicitWaitVisible(LoginPage.objMessage,20);
+		verifyElementPresentAndClick(LoginPage.objMessage,"Messages");
+		findElementAndVerifyText(LoginPage.objMessages,"Messages");
+		verifyElementPresent(LoginPage.objClosepcmtButton,"Cancel Button");
+		verifyElementPresentAndClick(LoginPage.objMessageTextfield,"Message textfield");
+		String generateRandomStringSMS = generateRandomString(10);
+		type(LoginPage.objMessageTextfield,generateRandomStringSMS, "meassage typed");
+		verifyElementPresentAndClick(LoginPage.objSendButton,"Send Button");
+		//	Web
+		switchPlatformToWebParentWindow(windowID);
+		waitForElementAndClickIfPresent(LoginPage.objCommunication,20,"Communication");		
+		waitForElementAndClickIfPresent(LoginPage.objMessageIcon,20,"Meassage Icon");
+		findElementAndVerifyTextWeb(LoginPage.smsText(generateRandomStringSMS), generateRandomStringSMS);
+		waitForElementAndClickIfPresent(LoginPage.objSMSTextareaFieldWeb,20,"SMS textfield");
+		String generateRandomStringWebSMS = generateRandomString(10);
+		typeWeb(LoginPage.objSMSTextareaFieldWeb, generateRandomStringWebSMS, "Web SMS textfield");
+		waitForElementAndClickIfPresent(LoginPage.objSendButtonWeb,20,"Send Button");
+		switchPlatformToAndroid();
+		waitTime(3000);
+		findElementAndVerifyText(LoginPage.SmsVerify(generateRandomStringWebSMS), generateRandomStringWebSMS);
+		verifyElementPresentAndClick(LoginPage.objClosepcmtButton,"Close Button");
+		findElementAndVerifyText(LoginPage.objActivity, "Activity");
+		findElementAndVerifyText(LoginPage.objBloodPressure, "Blood Pressure");
+
 	}
 	
 	
@@ -505,105 +769,7 @@ public static String UN;
 	
 	
 	
-
-	  /*
-	   * @param command
-	   * @throws Exception
-	   * @method for Login to Application
-	   */
-
-	  public static void logintoHRSportal(String HRS_URL,String UserName,String Password,String patient_name) throws Exception {    
-	    switchPlatformToWeb(HRS_URL);
-	    explicitWaitVisibility(LoginPage.objUsernameWeb, 20);  
-	    typeWeb(LoginPage.objUsernameWeb, UserName, "UserName Field");
-	    explicitWaitVisibility(LoginPage.objPasswordWeb, 20);    
-	    typeWeb(LoginPage.objPasswordWeb, Password, "Password Field");
-	    waitForElementAndClickIfPresent(LoginPage.objSignInButtonWeb, 10, "Submit Button");
-	    waitTime(6000);
-	    waitForElementAndClickIfPresent(LoginPage.objFirstName, 10, null);    
-	    clearWebField(LoginPage.objFirstName, "FirstName textfield");    
-	    waitTime(5000);    
-	    typeWeb(LoginPage.objFirstName, "", "First Name");    
-	    typeWeb(LoginPage.objFirstName, patient_name, "First Name");
-	    waitForElementAndClickIfPresent(LoginPage.objFullpatientList,60,"Full patient List");
-	    
-	   windowID = getWebDriver().getWindowHandle();
-	    
-	    System.out.println(windowID);
-	    ScrollToTheElement(LoginPage.objGenerateCode);
-	    waitForElementAndClickIfPresent(LoginPage.objGenerateCode,30, "Generate Code Button");
-	    UN=findElement(LoginPage.objUsername_Gcode).getText().replace("Username:", "").replaceAll(" ", "");    
-	    System.out.println(UN);
-	    PWD=findElement(LoginPage.objPassword_Gcode).getText().replace("Password:", "").replaceAll(" ", "");    
-	    System.out.println(PWD);    
-	    waitTime(5000);    
-	    JSClick(LoginPage.objCloseButtonWeb ,"close Button");
-	  }
-	  
-	  /*
-	   * @throws Exception
-	   * @method for Verifying general display of 'Voice Call'.
-	   */
-	  public static void verifyVoiceCallOption() throws Exception
-	  { 
-	    waitTime(6000);
-	    verifyElementPresentAndClick(LoginPage.objMainmenuButton,"Hamburger menu Button");
-	    waitTime(2000);
-	    verifyElementPresentAndClick(LoginPage.objContactCliniciaText,"Contact Clinician");
-	    waitTime(2000);
-	    verifyElementPresentAndClick(LoginPage.objVoiceCall,"Voice call");
-	    waitTime(2000);
-	    verifyElementPresent(LoginPage.objVoiceCall,"Voice call");
-	    waitTime(2000);
-	    verifyElementPresent(LoginPage.objCancelButton,"Cancel Button");
-	    waitTime(2000);
-	    verifyElementPresent(LoginPage.objClinician,"Clinician Text");
-	    waitTime(2000);
-	    verifyElementPresent(LoginPage.objVoiceCallIcon,"Voice Icon");
-	    waitTime(2000);
-	    verifyElementPresent(LoginPage.objCancelpcmtButton,"Cancel Button");
-	    waitTime(2000);
-	  //  verifyElementPresent(LoginPage.objCallButton,"Call Button");
-	  //  waitTime(2000);
-	    verifyElementPresentAndClick(LoginPage.objCallButton,"Call Button");
-	    waitTime(2000);
-	    System.out.println(windowID);
-	   // AndroidSwitchToParentWindow();
-		getWebDriver().switchTo().window(windowID);
-		//String s = getWebDriver().findElement(LoginPage.objActivatedBtn).getText();
-		//System.out.println(s);
-		new Utilities().setPlatform("Web");
-		System.out.println(getPlatform());
-	 //   verifyElementPresentAndClick(LoginPage.objActivatedBtn,"Call Button");
-	 //   (getDriver().getWindowHandles());
-	//	getWebDriver().switchTo().window(window.get(0));
-	    
-	    
-	  }
-	  
-	  /*
-	   * @throws Exception
-	   * @method click on signButton button
-	   */
-	  public static void signIntoHRSPCM() throws Exception 
-	  {
-	    switchPlatformToAndroid();
-	       
-	    if(verifyElementAvailable(LoginPage.objConsentForm,"Consent form")) 
-	    {
-	      verifyElementPresentAndClick(LoginPage.objNextButton, "Next Button");      
-	      verifyElementPresent(LoginPage.obj2of3Page,"Consent form 2 page");      
-	      verifyElementPresentAndClick(LoginPage.objNextButton, "Next Button");      
-	      verifyElementPresent(LoginPage.objSignature,"Signature page");      
-	      Swipe("LEFT", 1);    
-	      verifyElementPresentAndClick(LoginPage.objSubmitButton, "Submit Button");    
-	    }else {      
-	      verifyElementPresentAndClick(LoginPage.objSignIn, "Sign In button");      
-	      type(LoginPage.objUsernameField, UN, "UserName Field");    
-	      type(LoginPage.objPasswordField, PWD, "Password Field");      
-	      click(LoginPage.objSubmitButton, "Submit Button");
-	    }
-	  }
+	
 	
 	
 	

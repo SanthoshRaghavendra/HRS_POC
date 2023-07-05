@@ -26,7 +26,7 @@ public class ClinicianConnect extends BaseTest{
 		try {
 			verifyElementPresentAndClick(LoginPage.objPermissionSignIn_Btn, "Sing In");
 			HRSBusinessLogic.popupSelection();
-			HRSBusinessLogic.logInToWebClinicianConnect(prop.getproperty("HRS_URL"), prop.getproperty("HRS_USERNAME"), prop.getproperty("HRS_PWD"));
+			HRSBusinessLogic.logInToWebClinicianConnect(prop.getproperty("HRS_URL"), prop.getproperty("HRS_USERNAMEWEB"), prop.getproperty("HRS_PWDWEB"));
 			HRSBusinessLogic.validatePatientListGeneralDetailsDisplay();
 			logger.info("[T2894306][AND] Verify Patient List General Details display");
 			ExtentReporter.extentLoggerPass("Pass", "[T2894306][AND] Verify Patient List General Details display");

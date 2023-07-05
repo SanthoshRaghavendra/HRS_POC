@@ -73,35 +73,29 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 	//================================LoginPage==========================================//
 
 		//Location Permission Needed
-
 		public static By objLocationPermissionTxt=By.xpath("//*[@class='android.widget.TextView' and @text='Location Permissions Needed']");
-
+		
+		//CloseButton
 		public static By objCloseButton=By.xpath("//*[@class='android.widget.Button' and @text='CLOSE']");
 
 		//Device Location
-
 		public static By objAllowKRAMER=By.xpath("//*[@resource-id='com.android.permissioncontroller:id/permission_message']");
 
 		//While Using App
 		public static By objWhileUsingApp=By.xpath("//*[@resource-id='com.android.permissioncontroller:id/permission_allow_foreground_only_button']");
 
 		//Dont Allow
-
 		public static By objDontAllow=By.xpath("//*[@resource-id='com.android.permissioncontroller:id/permission_deny_button']");
 
 		//Sign In 
-
 		public static By objSignIn=By.xpath("//*[@class='android.widget.Button' and @text='SIGN IN']");
 
 		//Username TextField
-
-		public static By objUserName=By.xpath("//*[@class='android.widget.TextView' and @text='One-Time Sign In Username']");
-
+		//public static By objUserName=By.xpath("//*[@class='android.widget.TextView' and @text='One-Time Sign In Username']");
 		public static By objUsernameField=By.xpath("(//*[@resource-id='hrs-input-0-lbl']/following-sibling::android.view.View/child::android.widget.EditText)[1]");
 
 		//Password TextField
-		public static By objPassword=By.xpath("//*[@class='android.widget.TextView' and @text='One-Time Sign In Password']");
-
+		//public static By objPassword=By.xpath("//*[@class='android.widget.TextView' and @text='One-Time Sign In Password']");
 		public static By objPasswordField=By.xpath("(//*[@resource-id='hrs-input-0-lbl']/following-sibling::android.view.View/child::android.widget.EditText)[2]");
 
 		//Submit
@@ -109,21 +103,19 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 
 
 		//=======================================Consent Form==============================//
-		
+
 		//consent form header
 		public static By objConsentForm=By.xpath("//*[@text='Consent Form']");
 
 		//Next button
-
 		public static By objNextButton=By.xpath("//*[@class='android.widget.Button' and @text='NEXT next']");
-
 		public static By obj2of3Page=By.xpath("//*[@text='Step 2 of 3']");
 
 		//Signature
 		public static By objSignature=By.xpath("//*[@class='android.widget.TextView' and @text='Signature:']");
 
 		//===================================HOME PAGE====================================//
-		
+
 		//Hamburger menu
 		public static By objMainmenuButton=By.xpath("//*[@class='android.widget.Button' and @text='main menu']");
 
@@ -138,7 +130,6 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 
 		//Glucose 
 		public static By objGlucose=By.xpath("//*[contains(@text,'Glucose')]");
-
 
 		//Medication
 		public static By objMedication=By.xpath("//*[contains(@text,'Medication')]");
@@ -164,78 +155,11 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 		//Education Button
 		public static By objEducationButton=By.xpath("//*[@class='android.widget.TextView' and @text='Education']");
 
-
 		//Help Button
 		public static By objHelpButton=By.xpath("//*[@class='android.widget.TextView' and @text='Help']");
 
 		//contact clinician Button
 		public static By objContatClinicianButton=By.xpath("//*[@class='android.widget.Button' and @text='contact clinician-pcmt']");
-
-		//=================================Education Tab=========================================//
-		
-		//*videos Tab*//
-		public static By objVideosTab=By.xpath("//*[@class='android.widget.Button' and @text='Videos']");
-
-		//videos page elements
-		public static By objvideoEle=By.xpath("//*[@class='android.widget.Button' and @text='Videos']/../../../following-sibling::android.view.View");
-
-		//CHF
-		public static By objCHFModule=By.xpath("//*[@class='android.view.View' and @text='CHF']");
-
-		//COPD
-		public static By objCOPDModule=By.xpath("//*[@class='android.view.View' and @text='COPD']");
-
-		//Default
-		public static By objDefaultModule=By.xpath("//*[@class='android.view.View' and @text='Default']");
-
-		//OneLastPreset
-		public static By objOneLastPresetModule=By.xpath("//*[@class='android.view.View' and @text='OneLastPreset']");
-
-		//RollerCoasterAddiction
-		public static By objRollerCoasterAddictionModule=By.xpath("//*[@class='android.view.View' and @text='Roller Coaster Addiction']");
-
-		//Sad
-		public static By objSadModule=By.xpath("//*[@class='android.view.View' and @text='Sad']");
-
-
-		//*Quizzes Tab*//
-		public static By objQuizzesTab=By.xpath("//*[@class='android.widget.Button' and @text='Quizzes']");
-
-		//Quizzes page elements
-		public static By objQuizzesEle=By.xpath("//*[@class='android.widget.Button' and @text='Quizzes']/../../../following-sibling::android.view.View");
-
-		//CHF
-		public static By objChfModule=By.xpath("//*[@class='android.view.View' and @text='CHF']");
-
-		//Diabetes
-		public static By objDiabetesModule=By.xpath("//*[@class='android.view.View' and @text='Diabetes']");
-
-		//Insomnia
-		public static By objInsomniaModule=By.xpath("//*[@class='android.view.View' and @text='Insomnia']");
-
-		//IRTEST
-		public static By objIRTESTModule=By.xpath("//*[@class='android.view.View' and @text='IRTEST']");
-
-		//Laziness
-		public static By objLazinessModule=By.xpath("//*[@class='android.view.View' and @text='Laziness']");
-
-		//Obesity
-		public static By objObesityModule=By.xpath("//*[@class='android.view.View' and @text='Obesity']");
-
-		//SSTEST
-		public static By objSSTESTModule=By.xpath("//*[@class='android.view.View' and @text='SSTEST']");
-
-		//Wacky Hair
-		public static By objWackyHairModule=By.xpath("//*[@class='android.view.View' and @text='Wacky Hair']");
-
-		//xtest
-		public static By objxtestModule=By.xpath("//*[@class='android.view.View' and @text='xtest']");
-
-		//*Files Tab*//
-		public static By objFilesTab=By.xpath("//*[@class='android.widget.Button' and @text='Files']");
-
-		//Education Module
-		public static By objEducationModule=By.xpath("//*[@class='android.widget.Button' and @text='Files']/ancestor::android.view.View[3]/following-sibling::android.view.View");
 
 
 		//========================contact clinician=====================================//
@@ -246,11 +170,8 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 		//video call
 		public static By objVideoCall=By.xpath("//*[contains(@text,'Video Call')]");
 
-		//Video calltext in videocall page
-		//	public static By objVideoCallText=By.xpath("//*[@class='android.view.View' and @text='Video Call']");
-
 		//Close pcmt Button
-		public static By objCancelButton=By.xpath("//*[@class='android.widget.Button' and @text='close pcmt']");
+		public static By objClosepcmtButton=By.xpath("//*[@class='android.widget.Button' and @text='close pcmt']");
 
 		//Clinician
 		public static By objClinician=By.xpath("//*[@class='android.widget.TextView' and @text='Clinician']");
@@ -261,8 +182,12 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 		//Cancel Button
 		public static By objCancelpcmtButton=By.xpath("//*[@class='android.widget.Button' and @text='CANCEL']");
 
+		
 		//Call Button
 		public static By objCallButton=By.xpath("//*[@class='android.widget.Button' and @text='CALL']");
+
+		//End Call
+		public static By objEndcallButton=By.xpath("//*[@class='android.widget.Button' and @text='END CALL']");
 
 		//voice call 
 		public static By objVoiceCall=By.xpath("//*[contains(@text,'Voice Call')]");
@@ -272,13 +197,15 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 
 		//messages
 		public static By objMessage=By.xpath("//*[contains(@text,'Messages')]");
+		
+		//messages Text 
+		public static By objMessages=By.xpath("//*[@class='android.view.View' and @text='Messages']");
 
 		//Message Textfield
 		public static By objMessageTextfield=By.xpath("//*[@class='android.widget.EditText']");
 
 		//Send Button
 		public static By objSendButton=By.xpath("//*[@class='android.widget.Button' and @text='SEND send']");
-
 
 		//Home Page Tabs
 		//public static By objHomeTabs = By.xpath("//*[@resource-id='background-content']/following-sibling::android.view.View/descendant::android.view.View");
@@ -292,7 +219,6 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 
 		//Diastolic Textfield
 		public static By objDiastolic=By.xpath("//*[contains(@text,'Diastolic: (mm Hg)')]");
-
 
 		//HeartRate Textfield
 		public static By objHeartRate=By.xpath("//*[contains(@text,'Heart rate: (bpm)')]");
@@ -320,6 +246,7 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 
 		//Name coloumn for careplan
 		public static By objTestdataName=By.xpath("(//div[@class='ui-grid-row ng-scope'])[30]");
+		
 		//Last Name
 		public static By objLastName=By.xpath("//span[text()='Last Name']/parent::div/following-sibling::div[2]/child::div/child::div/child::input[@type='text']");
 
@@ -344,15 +271,15 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 		//Bloodpressure block in table
 
 		public static By objHistoricalBPblock=By.xpath("//table/tbody/tr[@class='qa-spreadsheet_table--row-0 odd']");
-		
+
 		//Overview BPBlock in table
-		
+
 		public static By objOverviewBPblockWeb=By.xpath("//table/tbody/tr/td/span[@class='qa-bloodpressure_last--reading']");
-		
+
 		//Patient List BP block
-		
+
 		public static By objPatientBPblock=By.xpath("//div[@class='ui-grid-cell ng-scope ui-grid-coluiGrid-000K qa-patient_list_table--cell-bp cell-danger']");
-		
+
 		//Pratima Patient full view in table
 		public static By objPatientTableview=By.xpath("(//div[@class='ui-grid-row ng-scope'])[3]");
 
@@ -382,117 +309,39 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 		//cancel ButtonWeb
 		public static By objCancelButtonWeb=By.xpath("//button[.='Cancel']");
 
-		//Biometric reminder
-		//public static By objBiometricReminder=By.xpath("//p[.='Biometric Reminders']");
-
 		//Save Button
 		public static By objSaveButtonWeb=By.xpath("//span[.='Save']/preceding::button[.='Add Reminder']");
 		
-		//Care paln notification popup
-		public static By objCareplanNotification=By.xpath("//p[.='Care Plan Metrics were successfully saved.']");
-	
-		//video call Webpopup
-		public static By objvideoCallPopupWeb=By.xpath("//div[@class='cg-notify-message-template']");
-		
-		//Answer Call button
-		public static By objAnswercallButton=By.xpath("//a[contains(text(),'Answer Call')]");
-		
-		//Decline Call Button
-		public static By objDeclinecallButton=By.xpath("//a[contains(text(),'Decline Call')]");
-		
-		//Incoming videocall text
-		
-		public static By objIncomingvediocall=By.xpath("//h5[.='Incoming Video Call']");
-		
-		// Call Connected
-		public static By objCallconnected=By.xpath("//h5[.=' Call Status: Connected ']");
-		
-		//call Button
-		public static By objcallButton=By.xpath("(//span[.=' Call '])[2]");
-		
-		//Call Avatar
-		public static By objcallAvatarButton=By.xpath("(//div[@class='avatar'])[2]");
-		
-		//Meeting info button
-		public static By objMeetingInfoButton=By.xpath("//button[@title='Meeting Information']");
-		
-		//Ribbon button
-		public static By objRibbonButton=By.xpath("//button[@title='Ribbon']");
-			
-		//Patient window
-		public static By objPatientWindow=By.xpath("//p[.='Patient']");
-		
-		//Clinician window
-		public static By objClinicianWindow=By.xpath("//li[@class='zmwebsdk-makeStyles-root-191']");
-		
-		
-		//More Button
-		public static By objAudioButton=By.xpath("//button[@title='More']");
-		
-		//Leave Button/end call
-		public static By objLeaveButton=By.xpath("//button[@title='Leave']");
-		
-		//Leave Meeting Button
-		public static By objLeaveMeetingButton=By.xpath("//span[.='Leave Meeting']");
-		
-		//HomePage secondMenuBar
-		public static By objHomePageMenuBar=By.xpath("//div[@class='menu']");
-		
-		//SMS Popup on Web
-		public static By objSMSPopup=By.xpath("//div[@class='cg-notify-message-template']");
-		
-		//Openchat button
-		public static By objOpenChatButton=By.xpath("//a[.='Open Chat']");
-		
-		//Meassaging Text
-		public static By objMeassagingText=By.xpath("//h5[.='Messaging']");
-		
-		//Sms texts
-		public static By objSmsText=By.xpath("//div[@class='qa-chat_item conversation-item']");
-		
-		//Textarea Field
-		public static By objSMSTextArea=By.xpath("//textarea[@placeholder='Enter your message here']");
-		
-		//Send ButtonWeb
-		public static By objSMSSendButton=By.xpath("//span[.=' Send ']");
-			
-	
-	
-	// Avtivate Button
-		
-		public static By objActivatedBtn = By.xpath("//*[text()='Generate Login Codes']");
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		//communication
+		public static By objCommunication=By.xpath("//a[.=' Communication ']");
 
+		//Message Icon
+		public static By objMessageIcon=By.xpath("//button[@class='qa-communication_tab--btn-chat btn']");
+		
+		//SMSTextInWeb(verify)
+		 public static By smsText(String smsText) {
 
+		        return By.xpath("//p[contains(text(),'" + smsText + "')]");
+		    }
+		
+		//SMS TextInWeb(sent)
+		//public static By objSMSText2=By.xpath("//p[contains(text(),'Hello345')]");
+		
+		//SMS textareafield
+		public static By objSMSTextareaFieldWeb=By.xpath("//textarea[@placeholder='Enter your message here']");
+		
+		//Send Button Web
+		public static By objSendButtonWeb=By.xpath("//span[contains(text(),' Send ')]");
+		
+		//SMSTextinMobile(sent)
+		//public static By objSMSTextMob=By.xpath("//*[@text='Hai123']");
+		
+		//SMS TextinMobile(verify)
+		 public static By SmsVerify(String SmsVerify) {
+			//*[@text='Mmcucuhhabb']
 
-
-
-
-
-
-
-
-
-
+		        return By.xpath("//*[@text='" + SmsVerify + "']");
+		    }
 
 
 }

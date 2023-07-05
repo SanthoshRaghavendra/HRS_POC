@@ -3512,4 +3512,9 @@ public class Utilities extends ExtentReporter {
 		logger.info("Typed the value " + value + " into " + FieldName);
 	}
 	
+	public static void reopenHRS() 
+	  {   
+	    DriverManager.getAppiumDriver().activateApp("ionic.hrsmobile.byod.patient");
+	  }
+	
 }

@@ -2,7 +2,7 @@ package com.hrs.Androidpages;
 
 import org.openqa.selenium.By;
 
-public class HomePage {
+public class HomePages {
 
 	
 	//Home Button 
@@ -11,5 +11,8 @@ public class HomePage {
 	public static By objEducationButtonText = By.xpath("//*[@text='Education' and @class='android.widget.TextView']");
 	//Help Button 
 	public static By objHelpButtonText = By.xpath("//*[@text='Help' and @class='android.widget.TextView']");
+	
+	
+	
 	
 }
