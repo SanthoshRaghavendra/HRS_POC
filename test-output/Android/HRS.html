@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>HRS</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/1/1</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/1</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jul 05 16:15:14 IST 2023</td>
+<td>Started on:</td><td>Wed Jul 05 17:10:26 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>279 seconds (279665 ms)</td>
+<tr><td>Total time:</td><td>293 seconds (293392 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,17 +75,21 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.hrs.test.Homepage.verifyContactClinicianvideoCallOption()'><b>verifyContactClinicianvideoCallOption</b><br>Test class: com.hrs.test.Homepage</td>
+<td title='com.hrs.test.Homepage.verifyhomePage()'><b>verifyhomePage</b><br>Test class: com.hrs.test.Homepage</td>
 <td><div><pre>java.lang.AssertionError: The following asserts failed:
-	ElementHamburger menu Button  is not visible expected [true] but found [false]
-	at com.hrs.test.Homepage.verifyContactClinicianvideoCallOption(Homepage.java:85)
+	Hamburger menu Button  is not displayed expected [true] but found [false],
+	Client Logo  is not displayed expected [true] but found [false],
+	Home Button  is not displayed expected [true] but found [false]
+	at com.hrs.test.Homepage.verifyhomePage(Homepage.java:35)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1855589354", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1855589354'><pre>java.lang.AssertionError: The following asserts failed:
-	ElementHamburger menu Button  is not visible expected [true] but found [false]
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1200293689", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1200293689'><pre>java.lang.AssertionError: The following asserts failed:
+	Hamburger menu Button  is not displayed expected [true] but found [false],
+	Client Logo  is not displayed expected [true] but found [false],
+	Home Button  is not displayed expected [true] but found [false]
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at com.hrs.test.Homepage.verifyContactClinicianvideoCallOption(Homepage.java:85)
+	at com.hrs.test.Homepage.verifyhomePage(Homepage.java:35)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -115,26 +119,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>29</td>
-<td>com.hrs.test.Homepage@f27ea3</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.hrs.test.Homepage.verifyBloodPressure()'><b>verifyBloodPressure</b><br>Test class: com.hrs.test.Homepage</td>
-<td></td>
-<td>93</td>
-<td>com.hrs.test.Homepage@f27ea3</td></tr>
-<tr>
-<td title='com.hrs.test.Homepage.verifyhomePage()'><b>verifyhomePage</b><br>Test class: com.hrs.test.Homepage</td>
-<td></td>
-<td>124</td>
-<td>com.hrs.test.Homepage@f27ea3</td></tr>
+<td>262</td>
+<td>com.hrs.test.Homepage@1ce61929</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -144,11 +130,11 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.hrs.test.Homepage.verifyContactClinicianVoiceCallOption()'><b>verifyContactClinicianVoiceCallOption</b><br>Test class: com.hrs.test.Homepage</td>
-<td><div><pre>java.lang.Throwable: Method Homepage.verifyContactClinicianVoiceCallOption()[pri:0, instance:com.hrs.test.Homepage@f27ea3] depends on not successfully finished methods
+<td title='com.hrs.test.Homepage.verifyBloodPressure()'><b>verifyBloodPressure</b><br>Test class: com.hrs.test.Homepage</td>
+<td><div><pre>java.lang.Throwable: Method Homepage.verifyBloodPressure()[pri:0, instance:com.hrs.test.Homepage@1ce61929] depends on not successfully finished methods
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace895280806", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace895280806'><pre>java.lang.Throwable: Method Homepage.verifyContactClinicianVoiceCallOption()[pri:0, instance:com.hrs.test.Homepage@f27ea3] depends on not successfully finished methods
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace712874817", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace712874817'><pre>java.lang.Throwable: Method Homepage.verifyBloodPressure()[pri:0, instance:com.hrs.test.Homepage@1ce61929] depends on not successfully finished methods
 	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:101)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -170,7 +156,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>com.hrs.test.Homepage@f27ea3</td></tr>
+<td>com.hrs.test.Homepage@1ce61929</td></tr>
 </table><p>
 </body>
 </html>

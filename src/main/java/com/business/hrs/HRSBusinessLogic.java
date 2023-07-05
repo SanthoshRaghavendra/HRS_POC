@@ -666,7 +666,8 @@ public static String UN;
 	public static void verifyvideoCallOption() throws Exception
 	{ 
 		switchPlatformToAndroid();
-		explicitWaitVisible(LoginPage.objMainmenuButton,20);
+		Thread.sleep(3000);
+		//explicitWaitVisible(LoginPage.objMainmenuButton,20);
 		verifyElementPresentAndClick(LoginPage.objMainmenuButton,"Hamburger menu Button");
 		explicitWaitVisible(LoginPage.objContactCliniciaText,20);
 		verifyElementPresentAndClick(LoginPage.objContactCliniciaText,"Contact Clinician");
