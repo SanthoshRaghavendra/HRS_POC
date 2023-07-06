@@ -10,18 +10,14 @@
     <parameter name="portno" value="4723"/>
     <parameter name="deviceName" value="RZ8W3003SQL"/>
     <classes>
-      <class name="com.hrs.test.ClinicianConnect">
+      <class name="com.hrs.test.Homepage">
         <methods>
-          <include name="verifyMetricsTabGeneralDisplay"/>
-          <include name="verifyAddReminderModalGeneralDisplay"/>
           <include name="beforeMethod"/>
           <include name="beforeMethod"/>
-          <include name="verifyPatientConnectMobileLoginCodesLoggingIntoPCM"/>
-          <include name="verifyAddMedicationFrequencyOnceDaily"/>
+          <include name="verifyBloodPressure"/>
           <include name="afterTest"/>
-          <include name="verifyPatientListGeneralDetailsDisplay"/>
         </methods>
-      </class> <!-- com.hrs.test.ClinicianConnect -->
+      </class> <!-- com.hrs.test.Homepage -->
     </classes>
   </test> <!-- HRS(failed) -->
 </suite> <!-- Failed suite [Android] -->

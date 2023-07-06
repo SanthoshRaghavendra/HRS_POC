@@ -343,5 +343,11 @@ public static By objPasswordsField=By.xpath("(//*[@resource-id='hrs-input-0-lbl'
 		        return By.xpath("//*[@text='" + SmsVerify + "']");
 		    }
 
+		 public static By objSignOutButton=By.xpath("//*[@text='Sign Out']");
+		 
+		 public static By objSignOutPopupButton=By.xpath("//*[@text='SIGN OUT']");
+		 
+		 
+		
 
 }

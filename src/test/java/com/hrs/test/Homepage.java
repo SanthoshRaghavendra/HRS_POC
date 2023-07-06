@@ -2,6 +2,7 @@ package com.hrs.test;
 
 import org.testng.annotations.Test;
 import com.business.hrs.HRSBusinessLogic;
+import com.driverInstance.DriverManager;
 import com.hrs.Androidpages.LoginPage;
 import com.utility.ExtentReporter;
 import static com.utility.Utilities.*;
@@ -51,6 +52,7 @@ public class Homepage extends BaseTest{
 		try {
 		//	HRSBusinessLogic.verifyLoginPage();
 			HRSBusinessLogic.verifySendMessageOption(prop.getproperty("SMSMob"),prop.getproperty("SMSWeb"));
+			
 			logger.info("T2967740 Validate the UI elements displayed inside the PCM 'Message' modal. .");
 			ExtentReporter.extentLoggerPass("Pass","Validate the UI elements displayed inside the PCM 'Message' modal.");
 		} catch (AssertionError e) {
@@ -70,11 +72,13 @@ public class Homepage extends BaseTest{
 	 * @Date : June, 22, 2023
 	 * @Author : Pratima
 	 */
-	@Test
+	@Test(priority = 1)
 	public void verifyBloodPressure() throws Exception {
 		ExtentReporter.HeaderChildNode("T2895318");
 		try {
-			HRSBusinessLogic.verifyLoginPage();
+			
+			//HRSBusinessLogic.verifyLoginPage();
+			
 			HRSBusinessLogic.recordBloodPressure(prop.getproperty("Systolic_value"),prop.getproperty("Diastolic_value"),prop.getproperty("Heartrate_value"));
 			logger.info("T2895318 Validate that patient is able to submit entry after entering valid values into all fields and that green check mark appears on home screen after submission");
 			ExtentReporter.extentLoggerPass("Pass","Validate that patient is able to submit entry after entering valid values into all fields and that green check mark appears on home screen after submission");

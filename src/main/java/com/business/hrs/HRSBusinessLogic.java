@@ -617,8 +617,27 @@ public static String UN;
 	 */
 	public static void recordBloodPressure(String value1,String value2,String value3) throws Exception
 	{ 
-		Swipe("DOWN", 1);
-		waitTime(3000);
+		logintoHRSportal(prop.getproperty("HRS_URL"),prop.getproperty("HRS_USERNAME"),prop.getproperty("HRS_PWD"),prop.getproperty("FirstName"));
+		
+		switchPlatformToAndroid();
+//		type(LoginPage.objUsernameField, UN, "UserName Field");	
+//		waitTime(1000);
+//	
+//		type(LoginPage.objPasswordField, PWD, "Password Field");	
+//		Thread.sleep(4000);
+//		click(LoginPage.objSubmitButton, "Submit Button");
+//		
+		Thread.sleep(4000);
+		DriverManager.getAppiumDriver().findElement(LoginPage.objUsernameField).sendKeys(UN);
+		System.out.println("Typed the value  "+ mobileUserName);
+		Thread.sleep(1000);
+		DriverManager.getAppiumDriver().findElement(LoginPage.objPasswordField).sendKeys(PWD);		
+		Thread.sleep(1000);
+		System.out.println("Typed the value  "+ mobilePassword);
+		DriverManager.getAppiumDriver().findElement(LoginPage.objSubmitButton).click();
+		
+		Thread.sleep(1000);
+		
 		verifyElementPresentAndClick(LoginPage.objBloodPressure, "Blood Pressure");
 		explicitWaitVisible(LoginPage.objSystolic, 20);
 		verifyElementPresentAndClick(LoginPage.objSystolic, "Systolic:(mm Hg)");
@@ -745,12 +764,22 @@ public static String UN;
 		String generateRandomStringWebSMS = generateRandomString(10);
 		typeWeb(LoginPage.objSMSTextareaFieldWeb, generateRandomStringWebSMS, "Web SMS textfield");
 		waitForElementAndClickIfPresent(LoginPage.objSendButtonWeb,20,"Send Button");
+		Thread.sleep(1000);
+	//	getWebDriver().close();
 		switchPlatformToAndroid();
 		waitTime(3000);
 		findElementAndVerifyText(LoginPage.SmsVerify(generateRandomStringWebSMS), generateRandomStringWebSMS);
 		verifyElementPresentAndClick(LoginPage.objClosepcmtButton,"Close Button");
-		findElementAndVerifyText(LoginPage.objActivity, "Activity");
-		findElementAndVerifyText(LoginPage.objBloodPressure, "Blood Pressure");
+		verifyElementPresent(LoginPage.objHomeButtonText, "Home Button");
+		verifyElementPresentAndClick(LoginPage.objMainmenuButton,"Hamburger menu Button");
+		Thread.sleep(1000);
+		verifyElementPresentAndClick(LoginPage.objSignOutButton,"SignOut Button");
+		Thread.sleep(1000);
+		verifyElementPresentAndClick(LoginPage.objSignOutPopupButton,"SignOut Popup Button");
+		
+		
+//		findElementAndVerifyText(LoginPage.objActivity, "Activity");
+//		findElementAndVerifyText(LoginPage.objBloodPressure, "Blood Pressure");
 
 	}
 	
