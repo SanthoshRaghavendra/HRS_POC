@@ -24,7 +24,7 @@ public class ClinicianConnect extends BaseTest{
 	public void verifyPatientListGeneralDetailsDisplay() throws Exception {
 		ExtentReporter.HeaderChildNode("[T2894306]");
 		try {
-			verifyElementPresentAndClick(LoginPage.objPermissionSignIn_Btn, "Sing In");
+			verifyElementPresentAndClick(LoginPage.objPermissionSignIn_Btn, "Sign In");
 			HRSBusinessLogic.popupSelection();
 			HRSBusinessLogic.logInToWebClinicianConnect(prop.getproperty("HRS_URL"), prop.getproperty("HRS_USERNAMEWEB"), prop.getproperty("HRS_PWDWEB"));
 			HRSBusinessLogic.validatePatientListGeneralDetailsDisplay();
@@ -145,33 +145,7 @@ public class ClinicianConnect extends BaseTest{
 	
 	
 	
-////////////////////////////////	Mobile 
-	
-	/***
-	   * @throws Exception
-	   * @Function Name : verifyContactClinicianvideoCallOption()
-	   * @Description : Verifying general display of 'Video Call'.
-	   * @Return : N/A
-	   * @Date : June, 23, 2023
-	   * @Author : Pratima
-	   */
-	//  @Test
-	  public void verifyContactClinicianvideoCallOption() throws Exception {
-	    ExtentReporter.HeaderChildNode("T2967731");
-	    try {
-	      HRSBusinessLogic.logintoHRSportal("https://cc.jerry.hrsqa.com/","arpithags","Password1!!!!!", "Arpitha");
-	      HRSBusinessLogic.signIntoHRSPCM();
-	      HRSBusinessLogic.verifyVoiceCallOption();
-	      logger.info("T2967731 Verifying general display of 'Video Call'.");
-	      ExtentReporter.extentLoggerPass("Pass","Verifying general display of 'Video Call'.");
-	    } catch (AssertionError e) {
-	      logger.error("T2967731 Verifying general display of 'Video Call'.");
-	      ExtentReporter.extentLoggerFail("Fail", "Verifying general display of 'Video Call'.");
-	      throw e;
-	    } finally {
-	      softAssert.assertAll();
-	    }
-	  }
+
 	
 	
 	

@@ -18,7 +18,7 @@ public class HrsApiTest extends HrsApiLogic {
 
 	public static String actual_MedicationID_Count,actual_medGetewayEndPointResponse,actual_PatientName,actual_PatientEpoch,actual_PatientId, 
 	actual_PatientHrsId, actual_PatientType,actual_PatientStatus, actual_Medication_createdAtDate,actual_Medication_Name,actual_Medication_Id_0, actual_Medication_ResourceType,actual_Medication_UpdatedAtDate,
-	actual_Medication_createdAtDate_1, actual_Medication_Name_1,actual_Medication_Id_1, actual_Medication_ResourceType_1, actual_Medication_UpdatedAtDate_1;
+	actual_Medication_createdAtDate_1, actual_Medication_Name_1,actual_Medication_Id_1, actual_Medication_ResourceType_1, actual_Medication_UpdatedAtDate_1, actual_schemavalue;
 
 
 	String moduleName = "HRS API";
@@ -121,6 +121,102 @@ public class HrsApiTest extends HrsApiLogic {
 		
 
 	}
+	 static String requestBody;
+	 public static String schemaAPIBody() {
+		    requestBody="{\n"
+		    		+ "  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n"
+		    		+ "  \"type\": \"object\",\n"
+		    		+ "  \"properties\": {\n"
+		    		+ "    \"notifications\": {\n"
+		    		+ "      \"type\": \"array\",\n"
+		    		+ "      \"items\": {\n"
+		    		+ "        \"anyOf\": [\n"
+		    		+ "          {\n"
+		    		+ "            \"type\": \"object\",\n"
+		    		+ "            \"properties\": {\n"
+		    		+ "              \"patientName\": {\n"
+		    		+ "                \"type\": \"string\"\n"
+		    		+ "              },\n"
+		    		+ "              \"epoch\": {\n"
+		    		+ "                \"type\": \"number\"\n"
+		    		+ "              },\n"
+		    		+ "              \"id\": {\n"
+		    		+ "                \"type\": \"string\"\n"
+		    		+ "              },\n"
+		    		+ "              \"hrsid\": {\n"
+		    		+ "                \"type\": \"string\"\n"
+		    		+ "              },\n"
+		    		+ "              \"type\": {\n"
+		    		+ "                \"type\": \"number\"\n"
+		    		+ "              }\n"
+		    		+ "            },\n"
+		    		+ "            \"required\": [\n"
+		    		+ "              \"patientName\",\n"
+		    		+ "              \"epoch\",\n"
+		    		+ "              \"id\",\n"
+		    		+ "              \"hrsid\",\n"
+		    		+ "              \"type\"\n"
+		    		+ "            ]\n"
+		    		+ "          },\n"
+		    		+ "          {\n"
+		    		+ "            \"type\": \"object\",\n"
+		    		+ "            \"properties\": {\n"
+		    		+ "              \"patient\": {\n"
+		    		+ "                \"type\": \"object\",\n"
+		    		+ "                \"properties\": {\n"
+		    		+ "                  \"firstName\": {\n"
+		    		+ "                    \"type\": \"string\"\n"
+		    		+ "                  },\n"
+		    		+ "                  \"lastName\": {\n"
+		    		+ "                    \"type\": \"string\"\n"
+		    		+ "                  },\n"
+		    		+ "                  \"environment\": {\n"
+		    		+ "                    \"type\": \"string\"\n"
+		    		+ "                  },\n"
+		    		+ "                  \"hrsId\": {\n"
+		    		+ "                    \"type\": \"string\"\n"
+		    		+ "                  },\n"
+		    		+ "                  \"id\": {\n"
+		    		+ "                    \"type\": \"string\"\n"
+		    		+ "                  }\n"
+		    		+ "                },\n"
+		    		+ "                \"required\": [\n"
+		    		+ "                  \"firstName\",\n"
+		    		+ "                  \"lastName\",\n"
+		    		+ "                  \"environment\",\n"
+		    		+ "                  \"hrsId\",\n"
+		    		+ "                  \"id\"\n"
+		    		+ "                ]\n"
+		    		+ "              },\n"
+		    		+ "              \"epoch\": {\n"
+		    		+ "                \"type\": \"number\"\n"
+		    		+ "              },\n"
+		    		+ "              \"id\": {\n"
+		    		+ "                \"type\": \"string\"\n"
+		    		+ "              },\n"
+		    		+ "              \"type\": {\n"
+		    		+ "                \"type\": \"number\"\n"
+		    		+ "              },\n"
+		    		+ "              \"medicationCount\": {\n"
+		    		+ "                \"type\": \"number\"\n"
+		    		+ "              }\n"
+		    		+ "            },\n"
+		    		+ "            \"required\": [\n"
+		    		+ "              \"epoch\",\n"
+		    		+ "              \"type\",\n"
+		    		+ "              \"medicationCount\"\n"
+		    		+ "            ]\n"
+		    		+ "          }\n"
+		    		+ "        ]\n"
+		    		+ "      }\n"
+		    		+ "    }\n"
+		    		+ "  },\n"
+		    		+ "  \"required\": [\n"
+		    		+ "    \"notifications\"\n"
+		    		+ "  ]\n"
+		    		+ "}";
+		    return requestBody ;
+		  }
 
 	/**
 	 * *********************************************************************
@@ -161,9 +257,16 @@ public class HrsApiTest extends HrsApiLogic {
 			verifyAssertEqualsResults(actual_PatientType, patientType, "PatientType");
 			verifyAssertEqualsResults(actual_PatientStatus, patientStatus, "PatientStatus");	
 			System.out.println(response.getStatusCode());
+			
+	
+			
+			
 		}
 
 
+		
+		
+		  
 	
 
 	

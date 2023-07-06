@@ -11,10 +11,10 @@
 	  <test thread-count="5" name="Test">
 	    <classes>
 	       <class name="com.hrsAPI.test.HrsApiTest">
- 	 	<!--  <methods>
+ 	 	  <methods>
 			<include name="verifyNewMedicationFromEMRModalNotificationsReconciled"/>
 			
-		</methods>  --> 
+		</methods>  
  		</class>
  		 </classes>
 	  </test> <!-- Test -->

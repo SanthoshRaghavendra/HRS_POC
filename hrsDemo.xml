@@ -5,9 +5,9 @@
 
   <suite-files>
   
-    <suite-file path="./hrs.xml" />
+    
     <suite-file path="./testng.xml" />
-
+    <suite-file path="./hrs.xml" />
 
   </suite-files>
 

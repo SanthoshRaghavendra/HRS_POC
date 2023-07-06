@@ -14,7 +14,7 @@
 		<parameter name="deviceName" value="RZ8W3003SQL"></parameter>
 	<classes>
 	 	<class name="com.hrs.test.ClinicianConnect"></class> 
-			<class name="com.hrs.test.Homepage"></class>
+	 		<class name="com.hrs.test.Homepage"></class> 
  <!-- 	  <methods>
 			<include name="verifyContactClinicianvideoCallOption"/>
 			

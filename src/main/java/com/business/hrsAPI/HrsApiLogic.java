@@ -751,6 +751,7 @@ public class HrsApiLogic extends APIBaseClass {
 		response = HrsApiLogic.baseUrl(BaseUrl_GInsure).redirects().follow(false)
 				.body(HrsJsonBody.smsPrevalidateAPIResponseNullValuesResponseRequestBody(product_code)).log().all().when().post(resourceEndpoint)
 				.then().log().all().extract().response();
+		
 	}
 	
 	/**
@@ -773,12 +774,14 @@ public class HrsApiLogic extends APIBaseClass {
 	   * @Description : Sends the post Requests and gets the Response for GGives Registration.
 	   */
 	  public void getInquireResponseCorrectlyDisplaysRegisteredUserResponseBody(String msisdn, String user_id, String publicUserId, String birth_date, String order_amount) throws IOException {
-	    response = HrsApiLogic.baseUrl(BaseUrl_GGives).redirects().follow(false).params("msisdn",msisdn, "agentId",user_id, "publicUserId",publicUserId, "parentProduct", "cash", "product","GGIVES","birthdate",birth_date,"orderAmount","" )
+		  
+		  response = HrsApiLogic.baseUrl(BaseUrl_GGives).redirects().follow(false).params("msisdn",msisdn, "agentId",user_id, "publicUserId",publicUserId, "parentProduct", "cash", "product","GGIVES","birthdate",birth_date,"orderAmount","" )
 	        .log().all().when().get(resourceEndpoint)
 	        .then().log().all().extract().response();
 	  }
 	
-	  
+	  	
+	 
 	  
 	
 	

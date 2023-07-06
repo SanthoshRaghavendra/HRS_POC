@@ -365,7 +365,7 @@ public static String UN;
 			validateColorCodeByWebElement(tagLinkMadule.get(i));
 		}
 		findElementAndVerifyTextWeb(ClinicianConnectPage.objCancelButton, "Cancel");
-		verifyElementEnabled(ClinicianConnectPage.objSaveReminderMaduleBtn, "Save Button Enable");
+		verifyElementEnabled(ClinicianConnectPage.objSaveReminderMaduleBtn, "Save Button disable");
 
 		JSClick(ClinicianConnectPage.objReminderWindowDropDown, "Reminder Dropdown");
 		Thread.sleep(1000);
@@ -629,6 +629,8 @@ public static String UN;
 		explicitWaitVisible(LoginPage.objHeartRate, 20);
 		verifyElementPresentAndClick(LoginPage.objHeartRate, "Heart rate:(bpm)");
 		type(LoginPage.objHeartRate, value3, "Heart rate value Entered");
+		
+		// Scre
 		explicitWaitVisible(LoginPage.objSaveButton, 20);
 		verifyElementPresentAndClick(LoginPage.objSaveButton,"Save button");
 		String enabled_after = getAttributValue("enabled", LoginPage.objBloodPressure);
@@ -651,6 +653,7 @@ public static String UN;
 		verifyElementPresent(LoginPage.objOverviewBPblockWeb,"BPblock");
 		String BP2=getText(LoginPage.objOverviewBPblockWeb);
 		System.out.println(BP2);
+		//
 		waitForElementAndClickIfPresent(LoginPage.objHistoricaldata,60,"Historialdata");
 		verifyElementPresent(LoginPage.objHistoricalBPblock,"BPblock");
 		String BP3=getText(LoginPage.objHistoricalBPblock);

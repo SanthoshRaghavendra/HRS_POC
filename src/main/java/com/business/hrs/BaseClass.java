@@ -13,7 +13,7 @@ import com.utility.LoggingUtils;
 
 public class BaseClass {
 
-	static String oSPlatformName = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getSuite().getName();
+	static String oSPlatformName = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getSuite().getName().replaceAll(" (0)", "").trim();
 	public static LoggingUtils logger = new LoggingUtils();
 	public static PropertyFileReader prop;
 	public static String os = System.getProperty("os.name").toLowerCase();
