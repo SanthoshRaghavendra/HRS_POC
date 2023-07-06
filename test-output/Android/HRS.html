@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 06 15:26:59 IST 2023</td>
+<td>Started on:</td><td>Thu Jul 06 16:23:56 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>262 seconds (262645 ms)</td>
+<tr><td>Total time:</td><td>334 seconds (334605 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,76 +76,16 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.hrs.test.Homepage.verifyBloodPressure()'><b>verifyBloodPressure</b><br>Test class: com.hrs.test.Homepage</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-OH8IUHA&apos;, ip: &apos;192.168.1.21&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: ionic.hrsmobile.byod.patien..., appPackage: ionic.hrsmobile.byod.patient, appium-version: 1.22.3, autoGrantPermissions: true, automationName: UIAutomator2, databaseEnabled: false, desired: {appActivity: ionic.hrsmobile.byod.patien..., appPackage: ionic.hrsmobile.byod.patient, appium-version: 1.22.3, autoGrantPermissions: true, automationName: UIAutomator2, deviceName: Android Emulator, newCommandTimeout: 18000, platformName: android, platformVersion: 13, udid: RZ8W3003SQL, unlockKey: 1234, unlockType: pin}, deviceApiLevel: 33, deviceManufacturer: samsung, deviceModel: SM-A135F, deviceName: RZ8W3003SQL, deviceScreenDensity: 450, deviceScreenSize: 1080x2408, deviceUDID: RZ8W3003SQL, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 18000, pixelRatio: 2.8125, platform: LINUX, platformName: Android, platformVersion: 13, statBarHeight: 66, takesScreenshot: true, udid: RZ8W3003SQL, unlockKey: 1234, unlockType: pin, viewportRect: {height: 2142, left: 0, top: 66, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 5804095b-e7bf-44c7-a969-a0efc4d1294b
-*** Element info: {Using=xpath, value=(//*[@resource-id=&apos;hrs-input-0-lbl&apos;]/following-sibling::android.view.View/child::android.widget.EditText)[1]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.business.hrs.HRSBusinessLogic.recordBloodPressure(HRSBusinessLogic.java:631)
-	at com.hrs.test.Homepage.verifyBloodPressure(Homepage.java:82)
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	ElementBlood Pressure  is not visible expected [true] but found [false]
+	at com.hrs.test.Homepage.verifyBloodPressure(Homepage.java:90)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace241316255", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace241316255'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-OH8IUHA&apos;, ip: &apos;192.168.1.21&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: ionic.hrsmobile.byod.patien..., appPackage: ionic.hrsmobile.byod.patient, appium-version: 1.22.3, autoGrantPermissions: true, automationName: UIAutomator2, databaseEnabled: false, desired: {appActivity: ionic.hrsmobile.byod.patien..., appPackage: ionic.hrsmobile.byod.patient, appium-version: 1.22.3, autoGrantPermissions: true, automationName: UIAutomator2, deviceName: Android Emulator, newCommandTimeout: 18000, platformName: android, platformVersion: 13, udid: RZ8W3003SQL, unlockKey: 1234, unlockType: pin}, deviceApiLevel: 33, deviceManufacturer: samsung, deviceModel: SM-A135F, deviceName: RZ8W3003SQL, deviceScreenDensity: 450, deviceScreenSize: 1080x2408, deviceUDID: RZ8W3003SQL, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 18000, pixelRatio: 2.8125, platform: LINUX, platformName: Android, platformVersion: 13, statBarHeight: 66, takesScreenshot: true, udid: RZ8W3003SQL, unlockKey: 1234, unlockType: pin, viewportRect: {height: 2142, left: 0, top: 66, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 5804095b-e7bf-44c7-a969-a0efc4d1294b
-*** Element info: {Using=xpath, value=(//*[@resource-id=&apos;hrs-input-0-lbl&apos;]/following-sibling::android.view.View/child::android.widget.EditText)[1]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.business.hrs.HRSBusinessLogic.recordBloodPressure(HRSBusinessLogic.java:631)
-	at com.hrs.test.Homepage.verifyBloodPressure(Homepage.java:82)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1698990491", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1698990491'><pre>java.lang.AssertionError: The following asserts failed:
+	ElementBlood Pressure  is not visible expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at com.hrs.test.Homepage.verifyBloodPressure(Homepage.java:90)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -175,7 +115,7 @@ Session ID: 5804095b-e7bf-44c7-a969-a0efc4d1294b
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>69</td>
+<td>127</td>
 <td>com.hrs.test.Homepage@3383649e</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -188,12 +128,12 @@ Session ID: 5804095b-e7bf-44c7-a969-a0efc4d1294b
 <tr>
 <td title='com.hrs.test.Homepage.verifyContactClinicianMessageOption()'><b>verifyContactClinicianMessageOption</b><br>Test class: com.hrs.test.Homepage</td>
 <td></td>
-<td>33</td>
+<td>35</td>
 <td>com.hrs.test.Homepage@3383649e</td></tr>
 <tr>
 <td title='com.hrs.test.Homepage.verifyhomePage()'><b>verifyhomePage</b><br>Test class: com.hrs.test.Homepage</td>
 <td></td>
-<td>126</td>
+<td>137</td>
 <td>com.hrs.test.Homepage@3383649e</td></tr>
 </table><p>
 </body>

@@ -631,6 +631,25 @@ public class Utilities extends ExtentReporter {
 			return list.get(0).isDisplayed();
 		}
 	}
+	
+	public static void clearToBackgroundApps() throws IOException {
+	    String adbRecentApp = "adb shell input keyevent KEYCODE_APP_SWITCH";
+	    String adbSelectApp = "adb shell input keyevent KEYCODE_DPAD_DOWN";
+	    String adbClearApp = "adb shell input keyevent KEYCODE_DEL";
+	    String adbHomeScreen = "adb shell input keyevent KEYCODE_HOME";
+
+	    Runtime.getRuntime().exec(adbRecentApp);
+
+	    for (int iterator = 1; iterator <= 7; iterator++) {
+	      waitTime(1000);
+	      Runtime.getRuntime().exec(adbClearApp);
+	      Runtime.getRuntime().exec(adbSelectApp);
+	    }
+
+	    waitTime(1000);
+	    Runtime.getRuntime().exec(adbHomeScreen);
+	    System.out.println("Cleared all background Apps");
+	  }
 
 	public static boolean verifyIsElementDisplayed(By by, String validationtext) {
 		List<WebElement> list = null;

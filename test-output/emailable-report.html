@@ -9,44 +9,15 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Android</th></tr>
-<tr><td><a href="#t0">HRS</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">262,645</td><td></td><td></td></tr>
+<tr><td><a href="#t0">HRS</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">334,605</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Android</th></tr></tbody><tbody id="t0"><tr><th colspan="4">HRS &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.hrs.test.Homepage</td><td><a href="#m0">verifyBloodPressure</a></td><td rowspan="1">1688637609336</td><td rowspan="1">69881</td></tr><tr><th colspan="4">HRS &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.hrs.test.Homepage</td><td><a href="#m1">verifyContactClinicianMessageOption</a></td><td rowspan="1">1688637574257</td><td rowspan="1">33746</td></tr><tr class="passedeven"><td><a href="#m2">verifyhomePage</a></td><td rowspan="1">1688637446127</td><td rowspan="1">126813</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Android</th></tr></tbody><tbody id="t0"><tr><th colspan="4">HRS &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.hrs.test.Homepage</td><td><a href="#m0">verifyBloodPressure</a></td><td rowspan="1">1688641041267</td><td rowspan="1">127198</td></tr><tr><th colspan="4">HRS &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.hrs.test.Homepage</td><td><a href="#m1">verifyContactClinicianMessageOption</a></td><td rowspan="1">1688641004563</td><td rowspan="1">35412</td></tr><tr class="passedeven"><td><a href="#m2">verifyhomePage</a></td><td rowspan="1">1688640865558</td><td rowspan="1">137701</td></tr></tbody>
 </table>
-<h2>HRS</h2><h3 id="m0">com.hrs.test.Homepage#verifyBloodPressure</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-OH8IUHA&apos;, ip: &apos;192.168.1.21&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: ionic.hrsmobile.byod.patien..., appPackage: ionic.hrsmobile.byod.patient, appium-version: 1.22.3, autoGrantPermissions: true, automationName: UIAutomator2, databaseEnabled: false, desired: {appActivity: ionic.hrsmobile.byod.patien..., appPackage: ionic.hrsmobile.byod.patient, appium-version: 1.22.3, autoGrantPermissions: true, automationName: UIAutomator2, deviceName: Android Emulator, newCommandTimeout: 18000, platformName: android, platformVersion: 13, udid: RZ8W3003SQL, unlockKey: 1234, unlockType: pin}, deviceApiLevel: 33, deviceManufacturer: samsung, deviceModel: SM-A135F, deviceName: RZ8W3003SQL, deviceScreenDensity: 450, deviceScreenSize: 1080x2408, deviceUDID: RZ8W3003SQL, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 18000, pixelRatio: 2.8125, platform: LINUX, platformName: Android, platformVersion: 13, statBarHeight: 66, takesScreenshot: true, udid: RZ8W3003SQL, unlockKey: 1234, unlockType: pin, viewportRect: {height: 2142, left: 0, top: 66, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 5804095b-e7bf-44c7-a969-a0efc4d1294b
-*** Element info: {Using=xpath, value=(//*[@resource-id=&apos;hrs-input-0-lbl&apos;]/following-sibling::android.view.View/child::android.widget.EditText)[1]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.business.hrs.HRSBusinessLogic.recordBloodPressure(HRSBusinessLogic.java:631)
-	at com.hrs.test.Homepage.verifyBloodPressure(Homepage.java:82)
+<h2>HRS</h2><h3 id="m0">com.hrs.test.Homepage#verifyBloodPressure</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	ElementBlood Pressure  is not visible expected [true] but found [false]
+	at com.hrs.test.Homepage.verifyBloodPressure(Homepage.java:90)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m1">com.hrs.test.Homepage#verifyContactClinicianMessageOption</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m2">com.hrs.test.Homepage#verifyhomePage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>

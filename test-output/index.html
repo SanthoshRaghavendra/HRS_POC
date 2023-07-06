@@ -147,40 +147,11 @@
                   <a name="verifyBloodPressure">
                   </a> <!-- verifyBloodPressure -->
                   <span class="method-name">verifyBloodPressure</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-OH8IUHA&apos;, ip: &apos;192.168.1.21&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: ionic.hrsmobile.byod.patien..., appPackage: ionic.hrsmobile.byod.patient, appium-version: 1.22.3, autoGrantPermissions: true, automationName: UIAutomator2, databaseEnabled: false, desired: {appActivity: ionic.hrsmobile.byod.patien..., appPackage: ionic.hrsmobile.byod.patient, appium-version: 1.22.3, autoGrantPermissions: true, automationName: UIAutomator2, deviceName: Android Emulator, newCommandTimeout: 18000, platformName: android, platformVersion: 13, udid: RZ8W3003SQL, unlockKey: 1234, unlockType: pin}, deviceApiLevel: 33, deviceManufacturer: samsung, deviceModel: SM-A135F, deviceName: RZ8W3003SQL, deviceScreenDensity: 450, deviceScreenSize: 1080x2408, deviceUDID: RZ8W3003SQL, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 18000, pixelRatio: 2.8125, platform: LINUX, platformName: Android, platformVersion: 13, statBarHeight: 66, takesScreenshot: true, udid: RZ8W3003SQL, unlockKey: 1234, unlockType: pin, viewportRect: {height: 2142, left: 0, top: 66, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 5804095b-e7bf-44c7-a969-a0efc4d1294b
-*** Element info: {Using=xpath, value=(//*[@resource-id=&apos;hrs-input-0-lbl&apos;]/following-sibling::android.view.View/child::android.widget.EditText)[1]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
-	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at com.business.hrs.HRSBusinessLogic.recordBloodPressure(HRSBusinessLogic.java:631)
-	at com.hrs.test.Homepage.verifyBloodPressure(Homepage.java:82)
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	ElementBlood Pressure  is not visible expected [true] but found [false]
+	at com.hrs.test.Homepage.verifyBloodPressure(Homepage.java:90)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 31 stack frames
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -271,20 +242,20 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyhomePage')
 data.setCell(0, 2, 'com.hrs.test.Homepage')
-data.setCell(0, 3, 126813);
+data.setCell(0, 3, 137701);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'verifyBloodPressure')
 data.setCell(1, 2, 'com.hrs.test.Homepage')
-data.setCell(1, 3, 69881);
+data.setCell(1, 3, 127198);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'verifyContactClinicianMessageOption')
 data.setCell(2, 2, 'com.hrs.test.Homepage')
-data.setCell(2, 3, 33746);
+data.setCell(2, 3, 35412);
 window.suiteTableData['Android']= { tableData: data, tableDiv: 'times-div-Android'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
               <div id="times-div-Android">
               </div> <!-- times-div-Android -->
             </div> <!-- times-div -->
@@ -317,33 +288,33 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">16758 ms</span>
+                <span class="method-start">18649 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyhomePage</span>
-                <span class="method-start">16760 ms</span>
+                <span class="method-start">18652 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">144890 ms</span>
+                <span class="method-start">157657 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyContactClinicianMessageOption</span>
-                <span class="method-start">144890 ms</span>
+                <span class="method-start">157657 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">179969 ms</span>
+                <span class="method-start">194361 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifyBloodPressure</span>
-                <span class="method-start">179969 ms</span>
+                <span class="method-start">194361 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">250915 ms</span>
+                <span class="method-start">322673 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

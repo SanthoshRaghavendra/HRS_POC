@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import com.aventstack.extentreports.model.ScreenCapture;
 import com.driverInstance.DriverManager;
 import com.hrs.Androidpages.HomePages;
 import com.hrs.Androidpages.LoginPage;
@@ -545,29 +546,40 @@ public static String UN;
 	 * @throws Exception
 	 * @method click on signButton button
 	 */
-	public static void signIntoHRSPCM() throws Exception 
-	{
-		switchPlatformToAndroid();
-		reopenHRS();		
-		if(verifyElementAvailable(LoginPage.objConsentForm,"Consent form")) 
-		{
-			verifyElementPresentAndClick(LoginPage.objNextButton, "Next Button");			
-			verifyElementPresent(LoginPage.obj2of3Page,"Consent form 2 page");			
-			verifyElementPresentAndClick(LoginPage.objNextButton, "Next Button");			
-			verifyElementPresent(LoginPage.objSignature,"Signature page");			
-			Swipe("LEFT", 1);		
-			verifyElementPresentAndClick(LoginPage.objSubmitButton, "Submit Button");		
-		}else {			
-			verifyElementPresentAndClick(LoginPage.objSignIn, "Sign In button");	
-			type(LoginPage.objUsernameField, UN, "UserName Field");	
-			waitTime(1000);
-			type(LoginPage.objPasswordField, PWD, "Password Field");	
-			Thread.sleep(4000);
-			click(LoginPage.objSubmitButton, "Submit Button");
-			Thread.sleep(4000);
-		}
-	}
-
+	/*
+	   * @throws Exception
+	   * @method click on signButton button
+	   */
+	  public static void signIntoHRSPCM() throws Exception 
+	  {
+	    switchPlatformToAndroid();
+	    clearToBackgroundApps();
+	    reopenHRS();    
+	    if(verifyElementAvailable(LoginPage.objConsentForm,"Consent form")) 
+	    {
+	      verifyElementPresentAndClick(LoginPage.objNextButton, "Next Button");      
+	      verifyElementPresent(LoginPage.obj2of3Page,"Consent form 2 page");      
+	      verifyElementPresentAndClick(LoginPage.objNextButton, "Next Button");      
+	      verifyElementPresent(LoginPage.objSignature,"Signature page");      
+	      Swipe("LEFT", 1);    
+	      verifyElementPresentAndClick(LoginPage.objSubmitButton, "Submit Button");    
+	    }else {      
+	      verifyElementPresentAndClick(LoginPage.objSignIn, "Sign In button");
+	      try {
+	        System.out.println(platform);
+	      click(LoginPage.objUsernameField,"UserName Field");
+	      }catch(Exception e) {
+	        e.printStackTrace();
+	      }
+	      type(LoginPage.objUsernameField, UN, "UserName Field");  
+	      waitTime(1000);
+	      click(LoginPage.objPasswordField, "Password Field");
+	      type(LoginPage.objPasswordField, PWD, "Password Field");  
+	      waitTime(1000);
+	      click(LoginPage.objSubmitButton, "Submit Button");
+	      Thread.sleep(6000);
+	    }
+	  }
 	/*
 	 * @throws Exception
 	 * @method use to Login the application
@@ -615,71 +627,7 @@ public static String UN;
 	 * @throws Exception
 	 * @method for Validate that patient is able to submit entry after entering valid values into all fields and that green check mark appears on home screen after submission. 
 	 */
-	public static void recordBloodPressure(String value1,String value2,String value3) throws Exception
-	{ 
-		logintoHRSportal(prop.getproperty("HRS_URL"),prop.getproperty("HRS_USERNAME"),prop.getproperty("HRS_PWD"),prop.getproperty("FirstName"));
-		
-		switchPlatformToAndroid();
-//		type(LoginPage.objUsernameField, UN, "UserName Field");	
-//		waitTime(1000);
-//	
-//		type(LoginPage.objPasswordField, PWD, "Password Field");	
-//		Thread.sleep(4000);
-//		click(LoginPage.objSubmitButton, "Submit Button");
-//		
-		Thread.sleep(4000);
-		DriverManager.getAppiumDriver().findElement(LoginPage.objUsernameField).sendKeys(UN);
-		System.out.println("Typed the value  "+ mobileUserName);
-		Thread.sleep(1000);
-		DriverManager.getAppiumDriver().findElement(LoginPage.objPasswordField).sendKeys(PWD);		
-		Thread.sleep(1000);
-		System.out.println("Typed the value  "+ mobilePassword);
-		DriverManager.getAppiumDriver().findElement(LoginPage.objSubmitButton).click();
-		
-		Thread.sleep(1000);
-		
-		verifyElementPresentAndClick(LoginPage.objBloodPressure, "Blood Pressure");
-		explicitWaitVisible(LoginPage.objSystolic, 20);
-		verifyElementPresentAndClick(LoginPage.objSystolic, "Systolic:(mm Hg)");
-		type(LoginPage.objSystolic, value1, "Systolic value Entered");
-		explicitWaitVisible(LoginPage.objDiastolic, 20);
-		verifyElementPresentAndClick(LoginPage.objDiastolic, "Diastolic:(mm Hg)");
-		type(LoginPage.objDiastolic, value2, "Diastolic value Entered");
-		explicitWaitVisible(LoginPage.objHeartRate, 20);
-		verifyElementPresentAndClick(LoginPage.objHeartRate, "Heart rate:(bpm)");
-		type(LoginPage.objHeartRate, value3, "Heart rate value Entered");
-		
-		// Scre
-		explicitWaitVisible(LoginPage.objSaveButton, 20);
-		verifyElementPresentAndClick(LoginPage.objSaveButton,"Save button");
-		String enabled_after = getAttributValue("enabled", LoginPage.objBloodPressure);
-		logger.info(getText(LoginPage.objBloodPressure) + " is highlighted:" + enabled_after);
-		ExtentReporter.extentLogger("Attribute", getText(LoginPage.objBloodPressure) + " is highlighted:" + enabled_after);
-		//tearDown();
-		waitTime(5000);         
-		switchPlatformToWeb(prop.getproperty("HRS_URL"));	
-	//	getPlatform();
-	//	switchPlatformToWebParentWindow(windowID);
-		logintoHRSportalNotGCode(prop.getproperty("HRS_URL"),prop.getproperty("HRS_USERNAME"),prop.getproperty("HRS_PWD"),prop.getproperty("FirstName"));
-		waitTime(6000);	
-		verifyElementPresent(LoginPage.objPatientTableview, "Patient Table view");
-		verifyElementPresent(LoginPage.objPatientBPblock, "Patient BPblock");
-		verifyElementPresent(LoginPage.objPatientBPblock,"BPblock");
-		String BP1=getText(LoginPage.objPatientBPblock);
-		System.out.println(BP1);
-		waitForElementAndClickIfPresent(LoginPage.objFullpatientList,60,"Full patient List");
-		verifyElementPresent(LoginPage.objOverviewBPblockWeb, "Overview BP block");
-		verifyElementPresent(LoginPage.objOverviewBPblockWeb,"BPblock");
-		String BP2=getText(LoginPage.objOverviewBPblockWeb);
-		System.out.println(BP2);
-		//
-		waitForElementAndClickIfPresent(LoginPage.objHistoricaldata,60,"Historialdata");
-		verifyElementPresent(LoginPage.objHistoricalBPblock,"BPblock");
-		String BP3=getText(LoginPage.objHistoricalBPblock);
-		System.out.println(BP3);
-		//getWebDriver().close();
-
-	}	
+	
 
 	/*
 	 * @throws Exception
@@ -764,11 +712,13 @@ public static String UN;
 		String generateRandomStringWebSMS = generateRandomString(10);
 		typeWeb(LoginPage.objSMSTextareaFieldWeb, generateRandomStringWebSMS, "Web SMS textfield");
 		waitForElementAndClickIfPresent(LoginPage.objSendButtonWeb,20,"Send Button");
+		screencapture(getWebDriver());
 		Thread.sleep(1000);
 	//	getWebDriver().close();
 		switchPlatformToAndroid();
 		waitTime(3000);
 		findElementAndVerifyText(LoginPage.SmsVerify(generateRandomStringWebSMS), generateRandomStringWebSMS);
+		screencapture();
 		verifyElementPresentAndClick(LoginPage.objClosepcmtButton,"Close Button");
 		verifyElementPresent(LoginPage.objHomeButtonText, "Home Button");
 		verifyElementPresentAndClick(LoginPage.objMainmenuButton,"Hamburger menu Button");
@@ -790,10 +740,51 @@ public static String UN;
 	
 	
 	
-	
-	
-	
-	
+	/*
+	   * @throws Exception
+	   * @method for Validate that patient is able to submit entry after entering valid values into all fields and that green check mark appears on home screen after submission. 
+	   */
+	  public static void recordBloodPressure(String value1,String value2,String value3) throws Exception
+	  { 
+	    reopenHRS();
+	    verifyElementPresentAndClick(LoginPage.objBloodPressure, "Blood Pressure");
+	    explicitWaitVisible(LoginPage.objSystolic, 20);
+	    verifyElementPresentAndClick(LoginPage.objSystolic, "Systolic:(mm Hg)");
+	    type(LoginPage.objSystolic, value1, "Systolic value Entered");
+	    explicitWaitVisible(LoginPage.objDiastolic, 20);
+	    verifyElementPresentAndClick(LoginPage.objDiastolic, "Diastolic:(mm Hg)");
+	    type(LoginPage.objDiastolic, value2, "Diastolic value Entered");
+	    explicitWaitVisible(LoginPage.objHeartRate, 20);
+	    verifyElementPresentAndClick(LoginPage.objHeartRate, "Heart rate:(bpm)");
+	    type(LoginPage.objHeartRate, value3, "Heart rate value Entered");
+	    explicitWaitVisible(LoginPage.objSaveButton, 20);
+	    screencapture();
+	    verifyElementPresentAndClick(LoginPage.objSaveButton,"Save button");
+	    String enabled_after = getAttributValue("enabled", LoginPage.objBloodPressure);
+	    logger.info(getText(LoginPage.objBloodPressure) + " is highlighted:" + enabled_after);
+	    ExtentReporter.extentLogger("Attribute", getText(LoginPage.objBloodPressure) + " is highlighted:" + enabled_after);
+	    waitTime(5000);         
+	    switchPlatformToWeb(prop.getproperty("HRS_URL"));  
+	    getPlatform();
+	    //  switchPlatformToWebParentWindow(windowID);
+	    logintoHRSportalNotGCode(prop.getproperty("HRS_URL"),prop.getproperty("HRS_USERNAME"),prop.getproperty("HRS_PWD"),prop.getproperty("FirstName"));
+	    waitTime(6000);  
+	    verifyElementPresent(LoginPage.objPatientTableview, "Patient Table view");
+	    verifyElementPresent(LoginPage.objPatientBPblock, "Patient BPblock");
+	    verifyElementPresent(LoginPage.objPatientBPblock,"BPblock");
+	    String BP1=getText(LoginPage.objPatientBPblock);
+	    System.out.println(BP1);
+	    waitForElementAndClickIfPresent(LoginPage.objFullpatientList,60,"Full patient List");
+	    verifyElementPresent(LoginPage.objOverviewBPblockWeb, "Overview BP block");
+	    verifyElementPresent(LoginPage.objOverviewBPblockWeb,"BPblock");
+	    String BP2=getText(LoginPage.objOverviewBPblockWeb);
+	    System.out.println(BP2);
+	    waitForElementAndClickIfPresent(LoginPage.objHistoricaldata,60,"Historialdata");
+	    verifyElementPresent(LoginPage.objHistoricalBPblock,"BPblock");
+	    String BP3=getText(LoginPage.objHistoricalBPblock);
+	    System.out.println(BP3);
+//	    getWebDriver().close();
+	  }
 	
 	
 	
