@@ -13,7 +13,7 @@
 		<parameter name="portno" value="4723"></parameter>
 		<parameter name="deviceName" value="RZ8W3003SQL"></parameter>
 	<classes>
-<!-- 	  <class name="com.hrs.test.ClinicianConnect"></class>  -->
+	  <class name="com.hrs.test.ClinicianConnect"></class>  
 	 		<class name="com.hrs.test.Homepage"></class> 
 
 
